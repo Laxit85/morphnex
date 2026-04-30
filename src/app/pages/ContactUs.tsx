@@ -19,7 +19,7 @@ export function ContactUs() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://morphnex.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

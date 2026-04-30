@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://morphnex.netlify.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/about</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/team</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/services</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/case-studies</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/career</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/contact</loc>
+  </url>
+
+</urlset>

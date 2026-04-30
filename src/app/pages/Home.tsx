@@ -30,7 +30,7 @@ export function Home() {
 
   return (
     <div className="bg-background text-foreground overflow-hidden">
-      <SEO title="Morphnex | Premium Software Engineering" description="Morphnex provides top-tier software engineering, AI/ML solutions, and premium UI/UX transformations." />
+      <SEO title="Morphnex" description="Morphnex provides top-tier software engineering, AI/ML solutions, and premium UI/UX transformations." />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20">
         <HeroCanvas />

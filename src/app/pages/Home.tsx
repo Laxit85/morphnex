@@ -53,7 +53,7 @@ export function Home() {
               </motion.div>
               <motion.h1
                 variants={itemVariants}
-                className="text-6xl md:text-7xl font-black text-[#FFFFFF] mb-6 leading-[1.1] tracking-tighter uppercase"
+                className="text-4xl sm:text-6xl md:text-7xl font-black text-[#FFFFFF] mb-6 leading-[1.1] tracking-tighter uppercase"
               >
                 Engineering <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A96E] to-[#FFFFFF]">

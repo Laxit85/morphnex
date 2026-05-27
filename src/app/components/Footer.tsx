@@ -107,7 +107,10 @@ export function Footer() {
 
             {/* Logo Mark for Footer */}
              <div className="flex items-center space-x-2">
-              <span className="text-[#FFFFFF] font-black tracking-tight text-xl">Morphnex.</span>
+               <div className="flex items-center justify-center border border-[#C9A96E] bg-[rgba(255,255,255,0.03)] w-8 h-8 overflow-hidden">
+                 <img src="/images/logo.jpeg" alt="Morphnex Logo" className="w-full h-full object-cover" />
+               </div>
+               <span className="text-[#FFFFFF] font-black tracking-tight text-xl">Morphnex.</span>
             </div>
 
             {/* Contact */}

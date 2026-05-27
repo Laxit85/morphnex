@@ -43,9 +43,9 @@ export function Navbar() {
             <motion.div 
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-              className={`flex items-center justify-center border border-[#C9A96E] bg-[rgba(255,255,255,0.03)] rounded-none transition-all duration-300 ${isScrolled ? 'w-8 h-8' : 'w-10 h-10'}`}
+              className={`flex items-center justify-center border border-[#C9A96E] bg-[rgba(255,255,255,0.03)] rounded-none transition-all duration-300 overflow-hidden ${isScrolled ? 'w-8 h-8' : 'w-10 h-10'}`}
             >
-              <span className="text-[#C9A96E] font-black tracking-tight">MX</span>
+              <img src="/images/logo.jpeg" alt="Morphnex Logo" className="w-full h-full object-cover" />
             </motion.div>
             <span className={`font-black text-[#FFFFFF] tracking-tight transition-all duration-300 ${isScrolled ? 'text-lg' : 'text-xl'}`}>
               Morphnex

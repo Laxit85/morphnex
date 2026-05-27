@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Mail, Phone, Linkedin, Github, Instagram } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Instagram, Twitter } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export function Footer() {
@@ -127,6 +127,10 @@ export function Footer() {
               
               <a href="https://linkedin.com/in/Laxit-jangid" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">
                 <Linkedin className="w-5 h-5" />
+              </a>
+
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">
+                <Twitter className="w-5 h-5" />
               </a>
 
               <a href="https://wa.me/917878429752" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">

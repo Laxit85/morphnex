@@ -22,8 +22,8 @@ export function Navbar() {
     });
   }, [scrollY]);
 
-  const isActive = (path: string) => location.pathname === path;
-  const isAboutActive = isActive('/about') || isActive('/team') || isActive('/blog');
+  const isActive = (path: string) => location.pathname === path || (path !== '/' && location.pathname.startsWith(path + '/'));
+  const isAboutActive = isActive('/about') || isActive('/team') || location.pathname.startsWith('/blog');
 
   return (
     <motion.nav

@@ -3,71 +3,9 @@ import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SEO } from '../components/SEO';
+import { blogPosts } from '../data/blogData';
 
 export function Blog() {
-  const blogPosts = [
-    {
-      title: '10 Best Practices for Cloud Migration',
-      excerpt:
-        'Learn essential strategies for successfully migrating your infrastructure to the cloud without downtime.',
-      author: 'Laxit jangid',
-      date: 'March 15, 2026',
-      category: 'Cloud Computing',
-      image:
-        'https://images.unsplash.com/photo-1668854096784-3ce7679fa841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMGRldm9wc3xlbnwxfHx8fDE3NzQ2MTUwODd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    },
-    {
-      title: 'The Future of AI in Software Development',
-      excerpt:
-        'Exploring how artificial intelligence is transforming the way we build and deploy software applications.',
-      author: 'Laxit jangid',
-      date: 'March 12, 2026',
-      category: 'AI & ML',
-      image:
-        'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwbWFjaGluZSUyMGxlYXJuaW5nfGVufDF8fHx8MTc3NDU5MjY4Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    },
-    {
-      title: 'Building Scalable Microservices Architecture',
-      excerpt:
-        'A comprehensive guide to designing and implementing microservices that scale with your business.',
-      author: 'Laxit jangid',
-      date: 'March 8, 2026',
-      category: 'Architecture',
-      image:
-        'https://images.unsplash.com/photo-1748256467077-c75ef01579aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGVuZ2luZWVyaW5nJTIwd29ya3NwYWNlfGVufDF8fHx8MTc3NDYxNTA4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    },
-    {
-      title: 'Securing Your Web Applications in 2026',
-      excerpt:
-        'Essential security practices every development team should implement to protect their applications.',
-      author: 'Laxit jangid',
-      date: 'March 5, 2026',
-      category: 'Security',
-      image:
-        'https://images.unsplash.com/photo-1590286162167-70fb467846ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcnlwdG9jdXJyZW5jeSUyMGJsb2NrY2hhaW4lMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3NDU5OTYxNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    },
-    {
-      title: 'DevOps Best Practices for Continuous Delivery',
-      excerpt:
-        'Streamline your development workflow with proven DevOps practices and automation strategies.',
-      author: 'Laxit jangid',
-      date: 'March 1, 2026',
-      category: 'DevOps',
-      image:
-        'https://images.unsplash.com/photo-1516263497941-cfa23ccbf9bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibG9nJTIwdGVjaG5vbG9neSUyMHdyaXRpbmd8ZW58MXx8fHwxNzc0NjE1MTU5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    },
-    {
-      title: 'React Performance Optimization Techniques',
-      excerpt:
-        'Advanced techniques to improve the performance of your React applications and enhance user experience.',
-      author: 'Laxit jangid',
-      date: 'February 25, 2026',
-      category: 'Web Development',
-      image:
-        'https://images.unsplash.com/photo-1759139681761-852dd24340df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBtb2JpbGUlMjBkZXZlbG9wbWVudCUyMGNvZGluZ3xlbnwxfHx8fDE3NzQ2MTUwODd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    },
-  ];
-
   return (
     <div className="bg-[#0F0F0F] min-h-screen">
       <SEO title="Blog & Insights | Morphnex" description="Read the latest insights on software engineering, UI/UX trends, and enterprise architecture from the Morphnex team." />
@@ -95,7 +33,7 @@ export function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {blogPosts.map((post, index) => (
               <motion.article
-                key={index}
+                key={post.slug}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -136,7 +74,7 @@ export function Blog() {
                     </div>
                     
                     <Link
-                      to="#"
+                      to={`/blog/${post.slug}`}
                       className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#C9A96E] hover:text-[#FFFFFF] transition-colors group/btn"
                     >
                       Read Full Article

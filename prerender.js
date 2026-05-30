@@ -44,6 +44,66 @@ const routes = [
     path: 'contact',
     title: "Contact Morphnex | Let's Build Together",
     description: 'Get in touch with Morphnex to discuss your next big software project or enterprise transformation.'
+  },
+  {
+    path: 'blog/cloud-migration-best-practices',
+    title: '10 Best Practices for Cloud Migration | Morphnex Blog',
+    description: 'Learn essential strategies for successfully migrating your infrastructure to the cloud without downtime.'
+  },
+  {
+    path: 'blog/future-of-ai-in-software-development',
+    title: 'The Future of AI in Software Development | Morphnex Blog',
+    description: 'Exploring how artificial intelligence is transforming the way we build and deploy software applications.'
+  },
+  {
+    path: 'blog/building-scalable-microservices-architecture',
+    title: 'Building Scalable Microservices Architecture | Morphnex Blog',
+    description: 'A comprehensive guide to designing and implementing microservices that scale with your business.'
+  },
+  {
+    path: 'blog/securing-web-applications-2026',
+    title: 'Securing Your Web Applications in 2026 | Morphnex Blog',
+    description: 'Essential security practices every development team should implement to protect their applications.'
+  },
+  {
+    path: 'blog/devops-best-practices-continuous-delivery',
+    title: 'DevOps Best Practices for Continuous Delivery | Morphnex Blog',
+    description: 'Streamline your development workflow with proven DevOps practices and automation strategies.'
+  },
+  {
+    path: 'blog/react-performance-optimization-techniques',
+    title: 'React Performance Optimization Techniques | Morphnex Blog',
+    description: 'Advanced techniques to improve the performance of your React applications and enhance user experience.'
+  },
+  {
+    path: 'case-studies/ecommerce-order-management-system',
+    title: 'E-Commerce Order Management System | Morphnex Case Study',
+    description: 'Processing 100k+ daily orders across multiple channels with real-time inventory management.'
+  },
+  {
+    path: 'case-studies/cryptocurrency-payment-gateway',
+    title: 'Cryptocurrency Payment Gateway | Morphnex Case Study',
+    description: 'Creating a secure, multi-chain payment gateway with instant settlement and fraud detection.'
+  },
+  {
+    path: 'case-studies/digital-banking-platform',
+    title: 'Digital Banking Platform | Morphnex Case Study',
+    description: 'Building a modern banking app serving 500k+ users with real-time transactions and compliance.'
+  },
+  {
+    path: 'case-studies/ai-powered-analytics-platform',
+    title: 'AI-Powered Analytics Platform | Morphnex Case Study',
+    description: 'Processing and analyzing terabytes of data daily with predictive insights for enterprise clients.'
+  },
+  {
+    path: 'case-studies/cloud-migration-devops-transformation',
+    title: 'Cloud Migration & DevOps Transformation | Morphnex Case Study',
+    description: 'Migrating legacy infrastructure to cloud with zero downtime and implementing DevOps practices.'
+  },
+  {
+    path: 'case-studies/multiplayer-gaming-platform',
+    title: 'Multiplayer Gaming Platform | Morphnex Case Study',
+    description: 'Creating a scalable multiplayer gaming platform with low latency and real-time synchronization.'
   }
 ];
 

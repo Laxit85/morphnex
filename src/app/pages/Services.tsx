@@ -74,7 +74,7 @@ export function Services() {
     },
     {
       icon: Database,
-      title: 'Digitak Marketing',
+      title: 'Digital Marketing',
       description:
         'We provide comprehensive digital marketing services to help businesses grow their online presence and reach their target audience.',
       features: [
@@ -102,7 +102,7 @@ export function Services() {
     },
     {
       icon: Shield,
-      title: 'Cunsulting',
+      title: 'Consulting',
       description:
         'We provide expert consulting services to help businesses optimize their operations and achieve their goals.',
       features: [

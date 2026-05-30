@@ -8,39 +8,51 @@ export function MeetTheTeam() {
     {
       name: 'Laxit Jangid',
       role: 'CEO & Founder',
-      image:
-        '../images/laxit.jpg',
+      image: '../images/laxit.jpg',
       bio: '15+ years in software engineering and business strategy',
     },
     {
       name: 'Sanjay Bhati',
-      role: 'CTO',
-      image:
-        '../images/sanjay.jpg',
-      bio: 'Expert in digital Marketing and video editing',
+      role: 'CTO & Head of Marketing',
+      image: '../images/sanjay.jpg',
+      bio: 'Expert in digital growth, brand positioning, and video editing',
     },
     {
-      name: 'laxit jangid',
-      role: 'VP of Engineering',
-      image:
-        '../images/laxit.jpg',
-      bio: 'Leading teams in AI/ML and data engineering',
+      name: '',
+      role: 'Backend Developer',
+      image: '',
+      bio: 'Specializing in secure databases, API architectures, and performance optimization.',
     },
     {
-      name: 'laxit jangid',
-      role: 'Lead Developer',
-      image:
-        '../images/laxit.jpg',
-      bio: 'Full-stack expert specializing in React and Node.js',
+      name: '',
+      role: 'Cloud Engineer',
+      image: '',
+      bio: 'Designing scalable multi-cloud infrastructure and high-availability systems.',
     },
     {
-      name: 'sanjay bhati',
-      role: 'marketing head',
-      image:
-        '../images/sanjay.jpg',
-      bio: 'Creating beautiful marketing templates and videos for 2+ years',
+      name: '',
+      role: 'Full Stack Developer',
+      image: '',
+      bio: 'Building comprehensive client-side and server-side web systems with React and Node.js.',
     },
-
+    {
+      name: '',
+      role: 'UI/UX Designer',
+      image: '',
+      bio: 'Crafting modern interfaces and interactive digital design layouts.',
+    },
+    {
+      name: '',
+      role: 'Frontend Developer',
+      image: '',
+      bio: 'Implementing responsive, accessible interfaces and smooth animations.',
+    },
+    {
+      name: '',
+      role: 'Mobile App Developer',
+      image: '',
+      bio: 'Developing native-feeling iOS and Android products using cross-platform tools.',
+    },
   ];
 
   return (
@@ -81,17 +93,17 @@ export function MeetTheTeam() {
                   <div className="absolute inset-0 bg-[#0F0F0F]/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
                   <ImageWithFallback
                     src={member.image}
-                    alt={member.name}
+                    alt={member.name || member.role}
                     className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-xl font-black text-[#FFFFFF] mb-2 uppercase tracking-tight">{member.name}</h3>
+                  <h3 className="text-xl font-black text-[#FFFFFF] mb-2 uppercase tracking-tight">{member.name || 'Position Open'}</h3>
                   <p className="text-[#C9A96E] text-xs font-bold uppercase tracking-widest mb-4">{member.role}</p>
                   <p className="text-[#A0A0A0] text-sm leading-relaxed font-medium mb-6">{member.bio}</p>
                   <div className="flex space-x-4 border-t border-[rgba(255,255,255,0.08)] pt-6">
                     <a
-                      href={`mailto:${member.name.toLowerCase().replace(' ', '.')}@morphnex.com`}
+                      href={member.name ? `mailto:${member.name.toLowerCase().replace(' ', '.')}@morphnex.com` : 'mailto:contact@morphnex.com'}
                       className="w-10 h-10 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] flex items-center justify-center text-[#A0A0A0] hover:text-[#0F0F0F] hover:bg-[#C9A96E] hover:border-[#C9A96E] transition-all duration-300"
                     >
                       <Mail className="w-4 h-4" />

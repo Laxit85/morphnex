@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Main Pages -->
   <url>
     <loc>https://morphnex.netlify.app/</loc>
   </url>
@@ -14,10 +15,6 @@
   </url>
 
   <url>
-    <loc>https://morphnex.netlify.app/blog</loc>
-  </url>
-
-  <url>
     <loc>https://morphnex.netlify.app/services</loc>
   </url>
 
@@ -26,11 +23,65 @@
   </url>
 
   <url>
+    <loc>https://morphnex.netlify.app/blog</loc>
+  </url>
+
+  <url>
     <loc>https://morphnex.netlify.app/career</loc>
   </url>
 
   <url>
     <loc>https://morphnex.netlify.app/contact</loc>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://morphnex.netlify.app/blog/cloud-migration-best-practices</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/blog/future-of-ai-software-development</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/blog/scalable-microservices-architecture</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/blog/web-application-security-2026</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/blog/devops-continuous-delivery</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/blog/react-performance-optimization</loc>
+  </url>
+
+  <!-- Case Studies -->
+  <url>
+    <loc>https://morphnex.netlify.app/case-studies/ecommerce-order-management-system</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/case-studies/cryptocurrency-payment-gateway</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/case-studies/digital-banking-platform</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/case-studies/ai-powered-analytics-platform</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/case-studies/cloud-migration-devops-transformation</loc>
+  </url>
+
+  <url>
+    <loc>https://morphnex.netlify.app/case-studies/multiplayer-gaming-platform</loc>
   </url>
 
 </urlset>

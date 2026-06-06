@@ -46,6 +46,9 @@ export function Blog() {
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    width={384}
+                    height={224}
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-8 flex-1 flex flex-col">
@@ -111,6 +114,7 @@ export function Blog() {
                 placeholder="ENTER YOUR EMAIL ADDRESS"
                 required
                 className="flex-grow px-6 py-4 bg-[#1A1A1A] border border-[rgba(255,255,255,0.08)] rounded-none text-[#FFFFFF] focus:outline-none focus:border-[#C9A96E] focus:ring-1 focus:ring-[#C9A96E] transition-all duration-300 placeholder-[#555555] text-xs font-bold tracking-widest uppercase"
+                aria-label="Email address for newsletter"
               />
               <button 
                 type="submit"

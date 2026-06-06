@@ -93,6 +93,7 @@ export function Footer() {
                 placeholder="Enter corporate email"
                 className="px-4 py-3 rounded-none bg-[#1A1A1A] border border-[rgba(255,255,255,0.08)] text-[#FFFFFF] focus:outline-none focus:border-[#C9A96E] transition-colors"
                 autoComplete="email"
+                aria-label="Enter corporate email"
               />
               <button className="bg-[#C9A96E] text-[#0F0F0F] px-4 py-3 font-bold uppercase tracking-widest text-sm hover:bg-[#FFFFFF] transition-colors duration-300 shadow-[0_0_15px_rgba(201,169,110,0.15)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
                 Subscribe
@@ -108,7 +109,7 @@ export function Footer() {
             {/* Logo Mark for Footer */}
              <div className="flex items-center space-x-2">
                <div className="flex items-center justify-center border border-[#C9A96E] bg-[rgba(255,255,255,0.03)] w-8 h-8 overflow-hidden">
-                 <img src="/images/logo.jpeg" alt="Morphnex Logo" className="w-full h-full object-cover" />
+                 <img src="/images/logo.webp" alt="Morphnex Logo" className="w-full h-full object-cover" width={32} height={32} loading="lazy" />
                </div>
                <span className="text-[#FFFFFF] font-black tracking-tight text-xl">Morphnex.</span>
             </div>
@@ -128,23 +129,23 @@ export function Footer() {
             {/* Social Icons */}
             <div className="flex items-center space-x-6">
               
-              <a href="https://linkedin.com/in/Laxit-jangid" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">
+              <a href="https://linkedin.com/in/Laxit-jangid" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
 
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
 
-              <a href="https://wa.me/917878429752" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">
+              <a href="https://wa.me/917878429752" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300" aria-label="WhatsApp">
                 <FaWhatsapp className="w-5 h-5" />
               </a>
 
-              <a href="https://instagram.com/thewebcraft25" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">
+              <a href="https://instagram.com/thewebcraft25" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
 
-              <a href="https://github.com/Laxit85" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300">
+              <a href="https://github.com/Laxit85" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A96E] transition-colors hover:-translate-y-1 transform duration-300" aria-label="GitHub">
                 <Github className="w-5 h-5" />
               </a>
 

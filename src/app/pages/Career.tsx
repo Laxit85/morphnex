@@ -8,7 +8,7 @@ export function Career() {
     {
       title: 'Frontend Developer',
       department: 'Engineering',
-      location: 'San Francisco, CA / Remote',
+      location: 'Jodhpur, Rajasthan, India / Remote',
       type: 'Full-time',
       description:
         'Build modern, responsive web applications using React, TypeScript, and Tailwind CSS.',
@@ -22,7 +22,7 @@ export function Career() {
     {
       title: 'Backend Developer',
       department: 'Engineering',
-      location: 'London, UK / Remote',
+      location: 'Jodhpur, Rajasthan, India / Remote',
       type: 'Full-time',
       description:
         'Design and develop scalable backend services using Node.js, Python, and cloud platforms.',
@@ -36,7 +36,7 @@ export function Career() {
     {
       title: 'DevOps Engineer',
       department: 'Infrastructure',
-      location: 'Berlin, Germany / Remote',
+      location: 'Jodhpur, Rajasthan, India / Remote',
       type: 'Full-time',
       description:
         'Build and maintain CI/CD pipelines, cloud infrastructure, and monitoring systems.',
@@ -50,7 +50,7 @@ export function Career() {
     {
       title: 'Full Stack Developer',
       department: 'Engineering',
-      location: 'Singapore / Remote',
+      location: 'Jodhpur, Rajasthan, India / Remote',
       type: 'Full-time',
       description:
         'Work across the entire technology stack building end-to-end features for our clients.',
@@ -64,7 +64,7 @@ export function Career() {
     {
       title: 'AI/ML Engineer',
       department: 'Data Science',
-      location: 'San Francisco, CA / Remote',
+      location: 'Jodhpur, Rajasthan, India / Remote',
       type: 'Full-time',
       description:
         'Develop machine learning models and AI solutions for enterprise applications.',
@@ -78,7 +78,7 @@ export function Career() {
     {
       title: 'Mobile Developer (iOS/Android)',
       department: 'Engineering',
-      location: 'Tokyo, Japan / Remote',
+      location: 'Jodhpur, Rajasthan, India / Remote',
       type: 'Full-time',
       description:
         'Create native mobile applications for iOS and Android with exceptional user experiences.',
@@ -92,7 +92,7 @@ export function Career() {
     {
       title: 'UI/UX Designer',
       department: 'Design',
-      location: 'Remote',
+      location: 'Jodhpur, Rajasthan, India / Remote',
       type: 'Full-time',
       description:
         'Design beautiful, intuitive user interfaces and experiences for web and mobile applications.',
@@ -106,7 +106,7 @@ export function Career() {
     {
       title: 'Solutions Architect',
       department: 'Engineering',
-      location: 'San Francisco, CA',
+      location: 'Jodhpur, Rajasthan, India',
       type: 'Full-time',
       description:
         'Design technical solutions and architecture for enterprise clients across industries.',

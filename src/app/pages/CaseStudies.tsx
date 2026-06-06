@@ -47,6 +47,9 @@ export function CaseStudies() {
                       src={study.image}
                       alt={study.title}
                       className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
+                      width={540}
+                      height={256}
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-8">

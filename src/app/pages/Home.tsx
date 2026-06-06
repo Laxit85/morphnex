@@ -1,10 +1,14 @@
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router';
 import { Check, ArrowRight, Users, Target, Award, ArrowUpRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SEO } from '../components/SEO';
-import { HeroCanvas } from '../components/ui/HeroCanvas';
 import { TiltCard } from '../components/ui/TiltCard';
+
+const HeroCanvas = lazy(() =>
+  import('../components/ui/HeroCanvas').then((m) => ({ default: m.HeroCanvas }))
+);
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,7 +37,9 @@ export function Home() {
       <SEO title="Morphnex" description="Morphnex provides top-tier software engineering, AI/ML solutions, and premium UI/UX transformations." />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20">
-        <HeroCanvas />
+        <Suspense fallback={<div className="absolute inset-0 bg-[#0F0F0F] -z-10" />}>
+          <HeroCanvas />
+        </Suspense>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <motion.div
             variants={containerVariants}
@@ -72,11 +78,11 @@ export function Home() {
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <div className="flex items-center space-x-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#A0A0A0] w-full sm:w-auto px-4 mt-4 sm:mt-0">
-                  <div className="flex -space-x-2">
-                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/men/32.jpg" alt=""/>
-                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/women/44.jpg" alt=""/>
-                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/men/46.jpg" alt=""/>
-                  </div>
+                <div className="flex -space-x-2">
+                  <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client avatar 1" width={32} height={32} loading="eager" />
+                  <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client avatar 2" width={32} height={32} loading="eager" />
+                  <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/men/46.jpg" alt="Client avatar 3" width={32} height={32} loading="eager" />
+                </div>
                   <span>Trusted by innovative brands</span>
                 </div>
               </motion.div>
@@ -91,10 +97,14 @@ export function Home() {
                       src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1080&auto=format&fit=crop"
                       alt="AI & ML"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      width={540}
+                      height={192}
+                      loading="eager"
+                      fetchpriority="high"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                      <h3 className="text-white font-semibold text-xl">AI & ML Data Engineering</h3>
+                      <h2 className="text-white font-semibold text-xl">AI & ML Data Engineering</h2>
                       <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center pointer-events-none">
                         <ArrowUpRight className="w-4 h-4 text-white" />
                       </div>
@@ -110,10 +120,13 @@ export function Home() {
                       src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080&auto=format&fit=crop"
                       alt="Web Development"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      width={540}
+                      height={192}
+                      loading="eager"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                      <h3 className="text-white font-semibold text-xl">Web & Mobile Development</h3>
+                      <h2 className="text-white font-semibold text-xl">Web & Mobile Development</h2>
                       <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center pointer-events-none">
                         <ArrowUpRight className="w-4 h-4 text-white" />
                       </div>
@@ -163,19 +176,19 @@ export function Home() {
                 title: 'Web Development',
                 description: 'Scalable website solutions with modern frameworks and best practices for performance optimization.',
                 icon: Award,
-                image: 'https://images.unsplash.com/photo-1759139681761-852dd24340df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBtb2JpbGUlMjBkZXZlbG9wbWVudCUyMGNvZGluZ3xlbnwxfHx8fDE3NzQ2MTUwODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+                image: 'https://images.unsplash.com/photo-1759139681761-852dd24340df?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBtb2JpbGUlMjBkZXZlbG9wbWVudCUyMGNvZGluZ3xlbnwxfHx8fDE3NzQ2MTUwODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
               },
               {
                 title: 'MVP Development',
                 description: 'Launch your product quickly with rapid development services that validate your idea to early users.',
                 icon: Target,
-                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdnB8ZW58MHx8fHwxNzc0NjE1MDkwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdnB8ZW58MHx8fHwxNzc0NjE1MDkwfDA&ixlib=rb-4.1.0&q=80&w=1080',
               },
               {
                 title: 'SEO & Digital Marketing',
                 description: 'Drive growth with data-driven marketing strategies and execution plans that maximize ROI.',
                 icon: ArrowUpRight,
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW98ZW58MHx8fHwxNzc0NjE1MDkxfDA&ixlib=rb-4.1.0&q=80&w=1080',
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW98ZW58MHx8fHwxNzc0NjE1MDkxfDA&ixlib=rb-4.1.0&q=80&w=1080',
               },
               {
                 title: 'Strategic Consulting',
@@ -187,13 +200,13 @@ export function Home() {
                 title: 'AI Automation',
                 description: 'Optimize workflows with AI-powered automation and intelligent systems that increase efficiency.',
                 icon: Check,
-                image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwbWFjaGluZSUyMGxlYXJuaW5nfGVufDB8fHx8MTc3NDU5MjY4Mnww&ixlib=rb-4.1.0&q=80&w=1080',
+                image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwbWFjaGluZSUyMGxlYXJuaW5nfGVufDB8fHx8MTc3NDU5MjY4Mnww&ixlib=rb-4.1.0&q=80&w=1080',
               },
               {
                 title: 'DevOps Services',
                 description: 'Streamline deployment with CI/CD pipelines and robust cloud infrastructure management.',
                 icon: Award,
-                image: 'https://images.unsplash.com/photo-1668854096784-3ce7679fa841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NzQ2MTUwODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+                image: 'https://images.unsplash.com/photo-1668854096784-3ce7679fa841?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyxlbnwwfHx8fDE3NzQ2MTUwODd8MA&ixlib=rb-4.1.0&q=80&w=1080',
               },
             ].map((service, index) => (
               <motion.div
@@ -206,7 +219,7 @@ export function Home() {
                 <TiltCard className="relative h-full group bg-[#1A1A1A] border border-[rgba(255,255,255,0.08)] shadow-[0_20px_40px_rgba(0,0,0,0.4)] rounded-none hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col">
                   {/* Background Image */}
                   <div className="absolute inset-0">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" width={400} height={250} loading="lazy" />
                   </div>
                   {/* Glassmorphism Plate Overlay */}
                   <div className="absolute inset-0 bg-[#0F0F0F]/80 backdrop-blur-sm transition-opacity duration-500 group-hover:bg-[#0F0F0F]/70"></div>
@@ -300,6 +313,9 @@ export function Home() {
                     src={story.image}
                     alt={story.title}
                     className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110 opacity-70 group-hover:opacity-100"
+                    width={384}
+                    height={448}
+                    loading="lazy"
                   />
                   
                   {/* Subtle dark gradient for readability */}
@@ -370,19 +386,19 @@ export function Home() {
                   quote: "Their team rebuilt our core infrastructure with a level of polish and performance we didn't think was possible. Engagement has skyrocketed.",
                   author: 'Rohit Jangid',
                   role: 'CEO, NexusTech',
-                  image: '../images/rohit.jpg',
+                  image: '/images/rohit.webp',
                 },
                 {
                   quote: "Working with them felt like an extension of our own team. Seamless communication and an incredibly beautiful, functional end product.",
                   author: 'Sanjay Bhati',
                   role: 'Founder, CloudSync',
-                  image: '../images/sanjay.jpg',
+                  image: '/images/sanjay.webp',
                 },
                 {
                   quote: "The UI/UX overhaul not only looks Apple-tier premium, but conversion rates have increased by 40% in just two months.",
                   author: 'Yashraj Singh',
                   role: 'Head of Product',
-                  image: '../images/yashraj.jpg',
+                  image: '/images/yashraj.webp',
                 },
               ]).map((testimonial, index) => (
                 <div
@@ -398,6 +414,9 @@ export function Home() {
                       src={testimonial.image}
                       alt={testimonial.author}
                       className="w-14 h-14 rounded-none object-cover border border-[#C9A96E]"
+                      width={56}
+                      height={56}
+                      loading="lazy"
                     />
                     <div>
                       <p className="font-bold text-[#FFFFFF] tracking-widest uppercase text-sm">

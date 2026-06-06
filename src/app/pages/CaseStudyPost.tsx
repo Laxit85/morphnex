@@ -149,6 +149,10 @@ export function CaseStudyPost() {
               src={study.image}
               alt={study.title}
               className="w-full h-full object-cover"
+              width={800}
+              height={512}
+              loading="eager"
+              fetchpriority="high"
             />
           </motion.div>
 
@@ -288,6 +292,9 @@ export function CaseStudyPost() {
                       src={relatedStudy.image}
                       alt={relatedStudy.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      width={384}
+                      height={176}
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">

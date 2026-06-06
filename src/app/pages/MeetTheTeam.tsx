@@ -8,13 +8,13 @@ export function MeetTheTeam() {
     {
       name: 'Laxit Jangid',
       role: 'CEO & Founder',
-      image: '../images/laxit.jpg',
+      image: '/images/laxit.webp',
       bio: '15+ years in software engineering and business strategy',
     },
     {
       name: 'Sanjay Bhati',
       role: 'CTO & Head of Marketing',
-      image: '../images/sanjay.jpg',
+      image: '/images/sanjay.webp',
       bio: 'Expert in digital growth, brand positioning, and video editing',
     },
     {
@@ -89,22 +89,34 @@ export function MeetTheTeam() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.08)] rounded-none overflow-hidden hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group"
               >
-                <div className="relative overflow-hidden w-full h-72">
-                  <div className="absolute inset-0 bg-[#0F0F0F]/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
-                  <ImageWithFallback
-                    src={member.image}
-                    alt={member.name || member.role}
-                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                  />
-                </div>
+                {member.image ? (
+                  <div className="relative overflow-hidden w-full h-72">
+                    <div className="absolute inset-0 bg-[#0F0F0F]/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                    <ImageWithFallback
+                      src={member.image}
+                      alt={member.name || member.role}
+                      className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                      width={280}
+                      height={288}
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative overflow-hidden w-full h-72 bg-[#151515] flex items-center justify-center border-b border-[rgba(255,255,255,0.08)]">
+                    <span className="text-2xl font-black text-[#C9A96E]/20 select-none uppercase tracking-widest">
+                      Open
+                    </span>
+                  </div>
+                )}
                 <div className="p-8">
-                  <h3 className="text-xl font-black text-[#FFFFFF] mb-2 uppercase tracking-tight">{member.name || 'Position Open'}</h3>
+                  <h2 className="text-xl font-black text-[#FFFFFF] mb-2 uppercase tracking-tight">{member.name || 'Position Open'}</h2>
                   <p className="text-[#C9A96E] text-xs font-bold uppercase tracking-widest mb-4">{member.role}</p>
                   <p className="text-[#A0A0A0] text-sm leading-relaxed font-medium mb-6">{member.bio}</p>
                   <div className="flex space-x-4 border-t border-[rgba(255,255,255,0.08)] pt-6">
                     <a
                       href={member.name ? `mailto:${member.name.toLowerCase().replace(' ', '.')}@morphnex.com` : 'mailto:contact@morphnex.com'}
                       className="w-10 h-10 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] flex items-center justify-center text-[#A0A0A0] hover:text-[#0F0F0F] hover:bg-[#C9A96E] hover:border-[#C9A96E] transition-all duration-300"
+                      aria-label={member.name ? `Email ${member.name}` : 'Email Morphnex'}
                     >
                       <Mail className="w-4 h-4" />
                     </a>
@@ -113,6 +125,7 @@ export function MeetTheTeam() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] flex items-center justify-center text-[#A0A0A0] hover:text-[#0F0F0F] hover:bg-[#C9A96E] hover:border-[#C9A96E] transition-all duration-300"
+                      aria-label={member.name ? `${member.name}'s LinkedIn` : 'LinkedIn Profile'}
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>
@@ -149,9 +162,12 @@ export function MeetTheTeam() {
           >
             <div className="absolute inset-0 bg-[#C9A96E]/10 mix-blend-overlay z-10 pointer-events-none transition-opacity duration-500 group-hover:opacity-0"></div>
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbSUyMG1lZXRpbmclMjBvZmZpY2V8ZW58MXx8fHwxNzc0NTkyOTkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbSUyMG1lZXRpbmclMjBvZmZpY2V8ZW58MXx8fHwxNzc0NTkyOTkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
               alt="Team Meeting"
               className="w-full h-[32rem] object-cover rounded-none grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+              width={1200}
+              height={512}
+              loading="lazy"
             />
           </motion.div>
         </div>

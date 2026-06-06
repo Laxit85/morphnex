@@ -45,7 +45,7 @@ export function Navbar() {
               whileTap={{ scale: 0.95 }}
               className={`flex items-center justify-center border border-[#C9A96E] bg-[rgba(255,255,255,0.03)] rounded-none transition-all duration-300 overflow-hidden ${isScrolled ? 'w-8 h-8' : 'w-10 h-10'}`}
             >
-              <img src="/images/logo.jpeg" alt="Morphnex Logo" className="w-full h-full object-cover" />
+              <img src="/images/logo.webp" alt="Morphnex Logo" className="w-full h-full object-cover" width={40} height={40} fetchpriority="high" loading="eager" />
             </motion.div>
             <span className={`font-black text-[#FFFFFF] tracking-tight transition-all duration-300 ${isScrolled ? 'text-lg' : 'text-xl'}`}>
               Morphnex
@@ -148,6 +148,7 @@ export function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-[#FFFFFF] p-2 hover:text-[#C9A96E] transition-colors"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

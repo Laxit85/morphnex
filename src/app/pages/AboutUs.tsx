@@ -219,6 +219,9 @@ export function AboutUs() {
                 src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1080&auto=format&fit=crop"
                 alt="Morphnex Corporate Office"
                 className="w-full h-96 object-cover rounded-none grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                width={1200}
+                height={384}
+                loading="lazy"
               />
             </div>
           </motion.div>

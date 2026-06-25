@@ -1,3 +1,38 @@
+# ===========================
+# Redirects
+# ===========================
+
+# Netlify subdomain -> Primary domain
+[[redirects]]
+  from = "https://morphnex.netlify.app/*"
+  to = "https://morphnex.in/:splat"
+  status = 301
+  force = true
+
+# HTTP -> HTTPS
+[[redirects]]
+  from = "http://morphnex.in/*"
+  to = "https://morphnex.in/:splat"
+  status = 301
+  force = true
+
+# WWW -> Non-WWW
+[[redirects]]
+  from = "https://www.morphnex.in/*"
+  to = "https://morphnex.in/:splat"
+  status = 301
+  force = true
+
+# SPA Routing (React/Vite)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ===========================
+# Cache Headers
+# ===========================
+
 [[headers]]
   for = "/assets/*"
   [headers.values]
@@ -7,6 +42,10 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# ===========================
+# Security Headers
+# ===========================
 
 [[headers]]
   for = "/*"

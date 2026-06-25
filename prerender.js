@@ -118,13 +118,13 @@ function prerender() {
 
   // Also prerender the root index.html to ensure it has the correct canonical tag
   let rootHtml = template;
-  rootHtml = rootHtml.replace(/<link id="canonical-link" rel="canonical" href="[^"]*"\s*\/?>/, '<link id="canonical-link" rel="canonical" href="https://morphnex.netlify.app/" />');
+  rootHtml = rootHtml.replace(/<link id="canonical-link" rel="canonical" href="[^"]*"\s*\/?>/, '<link id="canonical-link" rel="canonical" href="https://morphnex.in/" />');
   fs.writeFileSync(TEMPLATE_PATH, rootHtml, 'utf8');
   console.log('✓ Prerendered root (/)');
 
   routes.forEach(route => {
     let html = template;
-    const url = `https://morphnex.netlify.app/${route.path}`;
+    const url = `https://morphnex.in/${route.path}`;
 
     // 1. Replace Title
     html = html.replace(/<title>[^<]*<\/title>/g, `<title>${route.title}</title>`);

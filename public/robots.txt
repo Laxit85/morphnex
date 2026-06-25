@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://morphnex.netlify.app/sitemap.xml
+Sitemap: https://morphnex.in/sitemap.xml

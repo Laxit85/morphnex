@@ -37,6 +37,23 @@ export function Home() {
       <SEO title="Morphnex" description="Morphnex provides top-tier software engineering, AI/ML solutions, and premium UI/UX transformations." />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20">
+        {/* Subtle Tech Grid Background */}
+        <div 
+          className="absolute inset-0 -z-10 opacity-[0.15] pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+            `,
+            backgroundSize: '45px 45px',
+            maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)'
+          }}
+        />
+        {/* Luxury Glow Blobs */}
+        <div className="absolute top-1/4 left-1/10 w-[500px] h-[500px] bg-[#C9A96E]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse duration-[8000ms]" />
+        <div className="absolute bottom-1/4 right-1/10 w-[400px] h-[400px] bg-[#FFFFFF]/3 rounded-full blur-[120px] pointer-events-none -z-10" />
+
         <Suspense fallback={<div className="absolute inset-0 bg-[#0F0F0F] -z-10" />}>
           <HeroCanvas />
         </Suspense>
@@ -72,18 +89,18 @@ export function Home() {
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto relative inline-flex h-14 items-center justify-center overflow-hidden rounded-none bg-[#C9A96E] px-8 font-bold uppercase tracking-widest text-[#0F0F0F] text-xs shadow-[0_4px_14px_0_rgba(201,169,110,0.39)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(201,169,110,0.23)] active:scale-95 group"
+                  className="w-full sm:w-auto relative inline-flex h-14 items-center justify-center overflow-hidden rounded-none bg-[#C9A96E] px-8 font-bold uppercase tracking-widest text-[#0F0F0F] text-xs shadow-[0_4px_14px_0_rgba(201,169,110,0.39)] transition-all duration-300 hover:scale-[1.02] hover:bg-[#FFFFFF] hover:shadow-[0_6px_20px_rgba(255,255,255,0.2)] active:scale-95 group"
                 >
                   <span className="mr-2">Start Your Project</span>
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <div className="flex items-center space-x-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#A0A0A0] w-full sm:w-auto px-4 mt-4 sm:mt-0">
-                <div className="flex -space-x-2">
-                  <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client avatar 1" width={32} height={32} loading="eager" />
-                  <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client avatar 2" width={32} height={32} loading="eager" />
-                  <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)]" src="https://randomuser.me/api/portraits/men/46.jpg" alt="Client avatar 3" width={32} height={32} loading="eager" />
-                </div>
-                  <span>Trusted by innovative brands</span>
+                  <div className="flex -space-x-2">
+                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)] transition-transform duration-300 hover:scale-110 hover:z-10" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client avatar 1" width={32} height={32} loading="eager" />
+                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)] transition-transform duration-300 hover:scale-110 hover:z-10" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client avatar 2" width={32} height={32} loading="eager" />
+                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)] transition-transform duration-300 hover:scale-110 hover:z-10" src="https://randomuser.me/api/portraits/men/46.jpg" alt="Client avatar 3" width={32} height={32} loading="eager" />
+                  </div>
+                  <span className="transition-colors duration-300 hover:text-[#FFFFFF]">Trusted by innovative brands</span>
                 </div>
               </motion.div>
             </div>
@@ -91,22 +108,27 @@ export function Home() {
             {/* Right - 3D Service Cards */}
             <motion.div style={{ y: yParallax }} className="grid gap-6 perspective-1000 mt-12 lg:mt-0">
               <motion.div variants={itemVariants}>
-                <TiltCard className="p-2">
-                  <div className="relative h-48 rounded-lg overflow-hidden group">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1080&auto=format&fit=crop"
-                      alt="AI & ML"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      width={540}
-                      height={192}
-                      loading="eager"
-                      fetchpriority="high"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                      <h2 className="text-white font-semibold text-xl">AI & ML Data Engineering</h2>
-                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center pointer-events-none">
-                        <ArrowUpRight className="w-4 h-4 text-white" />
+                <TiltCard className="p-[1px] bg-[rgba(255,255,255,0.08)] hover:bg-[#C9A96E]/50 transition-colors duration-500 rounded-lg shadow-[0_15px_30px_rgba(0,0,0,0.5)]">
+                  <div className="relative h-48 rounded-lg overflow-hidden group bg-[#0F0F0F] p-1.5">
+                    <div className="relative w-full h-full rounded-md overflow-hidden">
+                      <ImageWithFallback
+                        src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1080&auto=format&fit=crop"
+                        alt="AI & ML"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        width={540}
+                        height={192}
+                        loading="eager"
+                        fetchpriority="high"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                        <div>
+                          <span className="text-[#C9A96E] text-[9px] uppercase font-bold tracking-widest block mb-1">INTELLIGENT SYSTEMS</span>
+                          <h2 className="text-white font-black text-xl uppercase tracking-tight">AI & ML Data Engineering</h2>
+                        </div>
+                        <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center group-hover:bg-[#C9A96E] group-hover:border-[#C9A96E] transition-all duration-300">
+                          <ArrowUpRight className="w-5 h-5 text-white group-hover:text-[#0F0F0F] transition-colors" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -114,21 +136,26 @@ export function Home() {
               </motion.div>
 
               <motion.div variants={itemVariants} className="ml-0 lg:ml-12">
-                <TiltCard className="p-2">
-                  <div className="relative h-48 rounded-lg overflow-hidden group">
-                    <ImageWithFallback
-                      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080&auto=format&fit=crop"
-                      alt="Web Development"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      width={540}
-                      height={192}
-                      loading="eager"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                      <h2 className="text-white font-semibold text-xl">Web & Mobile Development</h2>
-                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center pointer-events-none">
-                        <ArrowUpRight className="w-4 h-4 text-white" />
+                <TiltCard className="p-[1px] bg-[rgba(255,255,255,0.08)] hover:bg-[#C9A96E]/50 transition-colors duration-500 rounded-lg shadow-[0_15px_30px_rgba(0,0,0,0.5)]">
+                  <div className="relative h-48 rounded-lg overflow-hidden group bg-[#0F0F0F] p-1.5">
+                    <div className="relative w-full h-full rounded-md overflow-hidden">
+                      <ImageWithFallback
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080&auto=format&fit=crop"
+                        alt="Web Development"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        width={540}
+                        height={192}
+                        loading="eager"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                        <div>
+                          <span className="text-[#C9A96E] text-[9px] uppercase font-bold tracking-widest block mb-1">SCALABLE WEBSITES</span>
+                          <h2 className="text-white font-black text-xl uppercase tracking-tight">Web & Mobile Development</h2>
+                        </div>
+                        <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center group-hover:bg-[#C9A96E] group-hover:border-[#C9A96E] transition-all duration-300">
+                          <ArrowUpRight className="w-5 h-5 text-white group-hover:text-[#0F0F0F] transition-colors" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -142,10 +169,16 @@ export function Home() {
       {/* Client Logo Strip - Premium Style */}
       <section className="bg-[rgba(255,255,255,0.02)] backdrop-blur-sm py-12 border-y border-[rgba(255,255,255,0.08)] relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-[#A0A0A0] font-bold mb-10 text-[10px] tracking-[0.2em] uppercase">
+          <p className="text-center text-[#A0A0A0] font-bold mb-8 text-[10px] tracking-[0.2em] uppercase">
             Powering Next-Gen Companies
           </p>
-          
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-35 hover:opacity-60 transition-opacity duration-500">
+            <span className="text-lg md:text-xl font-extrabold tracking-[0.35em] text-[#FFFFFF] uppercase font-mono">KRONOS</span>
+            <span className="text-lg md:text-xl font-black tracking-[0.25em] text-[#C9A96E] uppercase">NEXUS</span>
+            <span className="text-lg md:text-xl font-light tracking-[0.45em] text-[#FFFFFF] uppercase">APEX</span>
+            <span className="text-lg md:text-xl font-extrabold tracking-[0.1em] text-[#FFFFFF] uppercase italic font-serif">VERTICES</span>
+            <span className="text-lg md:text-xl font-black tracking-[0.2em] text-[#C9A96E] uppercase">SYNAPSE</span>
+          </div>
         </div> 
       </section>
 

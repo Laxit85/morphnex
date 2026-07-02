@@ -2,27 +2,6 @@
 # Redirects
 # ===========================
 
-# Netlify subdomain -> Primary domain
-[[redirects]]
-  from = "https://morphnex.netlify.app/*"
-  to = "https://morphnex.in/:splat"
-  status = 301
-  force = true
-
-# HTTP -> HTTPS
-[[redirects]]
-  from = "http://morphnex.in/*"
-  to = "https://morphnex.in/:splat"
-  status = 301
-  force = true
-
-# WWW -> Non-WWW
-[[redirects]]
-  from = "https://www.morphnex.in/*"
-  to = "https://morphnex.in/:splat"
-  status = 301
-  force = true
-
 # SPA Routing (React/Vite)
 [[redirects]]
   from = "/*"

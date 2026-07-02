@@ -20,6 +20,7 @@ export function SEO({
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <link rel="canonical" href={window.location.origin + window.location.pathname} />
       
       {/* Open Graph tags (Facebook, LinkedIn, etc.) */}
       <meta property="og:type" content={type} />

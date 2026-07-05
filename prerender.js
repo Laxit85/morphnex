@@ -46,6 +46,11 @@ const routes = [
     description: 'Get in touch with Morphnex to discuss your next big software project or enterprise transformation.'
   },
   {
+    path: 'terms',
+    title: 'Terms & Conditions | Morphnex Technologies',
+    description: 'Read the terms and conditions of collaborating with Morphnex, detailing billing milestones, deposits, and delivery terms.'
+  },
+  {
     path: 'blog/cloud-migration-best-practices',
     title: '10 Best Practices for Cloud Migration | Morphnex Blog',
     description: 'Learn essential strategies for successfully migrating your infrastructure to the cloud without downtime.'

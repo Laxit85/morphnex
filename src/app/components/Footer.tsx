@@ -74,6 +74,7 @@ export function Footer() {
               <li><Link to="/career" className="hover:text-[#C9A96E] transition-colors">Careers</Link></li>
               <li><Link to="/blog" className="hover:text-[#C9A96E] transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-[#C9A96E] transition-colors">Contact</Link></li>
+              <li><Link to="/terms" className="hover:text-[#C9A96E] transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 

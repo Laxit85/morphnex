@@ -47,6 +47,10 @@ export const router = createBrowserRouter([
         lazy: () => import("./pages/ContactUs").then((m) => ({ Component: m.ContactUs })),
       },
       {
+        path: "terms",
+        lazy: () => import("./pages/TermsAndConditions").then((m) => ({ Component: m.TermsAndConditions })),
+      },
+      {
         path: "*",
         lazy: () => import("./pages/NotFound").then((m) => ({ Component: m.NotFound })),
       },

@@ -23,7 +23,7 @@ export function Navbar() {
   }, [scrollY]);
 
   const isActive = (path: string) => location.pathname === path || (path !== '/' && location.pathname.startsWith(path + '/'));
-  const isAboutActive = isActive('/about') || isActive('/team') || location.pathname.startsWith('/blog');
+  const isAboutActive = isActive('/about') || isActive('/team') || location.pathname.startsWith('/blog') || isActive('/terms');
 
   return (
     <motion.nav
@@ -89,6 +89,7 @@ export function Navbar() {
                       { name: 'About Us', path: '/about' },
                       { name: 'Meet the Team', path: '/team' },
                       { name: 'Blog', path: '/blog' },
+                      { name: 'Terms & Conditions', path: '/terms' },
                     ].map((item) => (
                       <Link
                         key={item.path}
@@ -168,14 +169,14 @@ export function Navbar() {
             <div className="px-4 py-6 space-y-6">
               <div className="space-y-2">
                 <p className="px-4 text-[10px] font-bold text-[#A0A0A0]/60 uppercase tracking-[0.2em] mb-4">Company</p>
-                {['/about', '/team', '/blog'].map((path, idx) => (
+                {['/about', '/team', '/blog', '/terms'].map((path, idx) => (
                   <Link
                     key={path}
                     to={path}
                     onClick={() => setMobileMenuOpen(false)}
                     className="block px-4 py-3 text-[#FFFFFF] hover:bg-[#1A1A1A] hover:text-[#C9A96E] transition-colors font-bold uppercase tracking-widest text-xs"
                   >
-                    {idx === 0 ? 'About Us' : idx === 1 ? 'Meet the Team' : 'Blog'}
+                    {idx === 0 ? 'About Us' : idx === 1 ? 'Meet the Team' : idx === 2 ? 'Blog' : 'Terms & Conditions'}
                   </Link>
                 ))}
               </div>

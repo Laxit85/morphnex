@@ -34,6 +34,10 @@
     <loc>https://morphnex.in/contact/</loc>
   </url>
 
+  <url>
+    <loc>https://morphnex.in/terms/</loc>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://morphnex.in/blog/cloud-migration-best-practices/</loc>

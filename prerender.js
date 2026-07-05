@@ -284,7 +284,7 @@ async function prerender() {
 
   routes.forEach(route => {
     let html = template;
-    const url = `https://morphnex.in/${route.path}`;
+    const url = `https://morphnex.in/${route.path}/`;
 
     // 1. Replace Title
     html = html.replace(/<title>[^<]*<\/title>/g, `<title>${route.title}</title>`);

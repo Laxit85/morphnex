@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, Shield, Coffee, Award } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SEO } from '../components/SEO';
 
@@ -18,39 +18,39 @@ export function MeetTheTeam() {
       bio: 'Expert in digital growth, brand positioning, and video editing',
     },
     {
-      name: 'Amit Sharma',
+      name: '',
       role: 'Backend Developer',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+      image: '',
       bio: 'Specializing in secure databases, API architectures, and performance optimization.',
     },
     {
-      name: 'Vikram Singh',
+      name: '',
       role: 'Cloud Engineer',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
+      image: '',
       bio: 'Designing scalable multi-cloud infrastructure and high-availability systems.',
     },
     {
-      name: 'Priya Patel',
+      name: '',
       role: 'Full Stack Developer',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop',
+      image: '',
       bio: 'Building comprehensive client-side and server-side web systems with React and Node.js.',
     },
     {
-      name: 'Neha Verma',
+      name: '',
       role: 'UI/UX Designer',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop',
+      image: '',
       bio: 'Crafting modern interfaces and interactive digital design layouts.',
     },
     {
-      name: 'Rajesh Kumar',
+      name: '',
       role: 'Frontend Developer',
-      image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop',
+      image: '',
       bio: 'Implementing responsive, accessible interfaces and smooth animations.',
     },
     {
-      name: 'Anjali Gupta',
+      name: '',
       role: 'Mobile App Developer',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop',
+      image: '',
       bio: 'Developing native-feeling iOS and Android products using cross-platform tools.',
     },
   ];
@@ -137,8 +137,140 @@ export function MeetTheTeam() {
         </div>
       </section>
 
+      {/* Our Culture Section */}
+      <section className="py-24 bg-[#121212] border-t border-[rgba(255,255,255,0.08)] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl font-black text-[#FFFFFF] mb-4 tracking-tighter uppercase">Our Culture</h2>
+            <p className="text-xl text-[#A0A0A0] font-medium max-w-3xl mx-auto">
+              How we work together, grow together, and model digital standards
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Shield,
+                title: 'High Trust & Autonomy',
+                desc: 'We do not micromanage. We focus on results, encouraging ownership and leadership in every role.'
+              },
+              {
+                icon: Coffee,
+                title: 'Continuous Growth',
+                desc: 'We support our teams with learning budgets, mentoring programs, and technical masterclasses.'
+              },
+              {
+                icon: Award,
+                title: 'Design & Code Craft',
+                desc: 'We believe clean systems and beautiful animations are just as important as structural performance.'
+              }
+            ].map((culture, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.08)] p-10 hover:border-[#C9A96E]/50 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-[rgba(255,255,255,0.03)] border border-[#C9A96E]/30 text-[#C9A96E] flex items-center justify-center mb-6">
+                  <culture.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold text-[#FFFFFF] mb-4 tracking-tight uppercase">{culture.title}</h3>
+                <p className="text-[#A0A0A0] leading-relaxed font-medium text-sm">{culture.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Perks & Benefits Section */}
+      <section className="py-24 bg-[#0F0F0F] border-t border-[rgba(255,255,255,0.08)] relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl font-black text-[#FFFFFF] mb-4 tracking-tighter uppercase">Perks & Benefits</h2>
+            <p className="text-xl text-[#A0A0A0] font-medium max-w-3xl mx-auto">
+              Everything you need to thrive, build, and enjoy your career
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { title: 'Remote Work', desc: 'Work from anywhere with high flexibility.' },
+              { title: 'Flexible Hours', desc: 'Standard work times built around your schedule.' },
+              { title: 'Top-tier Tech', desc: 'Access to premium coding and design tooling.' },
+              { title: 'Annual Retreats', desc: 'Team bonding meetups to align and celebrate.' }
+            ].map((perk, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.08)] p-8 text-center hover:bg-[rgba(255,255,255,0.02)] transition-colors duration-300"
+              >
+                <h3 className="text-lg font-bold text-[#C9A96E] mb-3 uppercase tracking-wider">{perk.title}</h3>
+                <p className="text-[#A0A0A0] text-xs font-medium leading-relaxed">{perk.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hiring Process */}
+      <section className="py-24 bg-[#121212] border-t border-[rgba(255,255,255,0.08)] relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl font-black text-[#FFFFFF] mb-4 tracking-tighter uppercase">Our Hiring Process</h2>
+            <p className="text-xl text-[#A0A0A0] font-medium max-w-3xl mx-auto">
+              How we review application submissions and select our developers
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { step: '01', title: 'Application', desc: 'Submit your resume and code samples via our career portal.' },
+              { step: '02', title: 'Technical Chat', desc: 'A short call reviewing software patterns and engineering skills.' },
+              { step: '03', title: 'Code Review', desc: 'A live coding review or small assessment matching your level.' },
+              { step: '04', title: 'Offer & Meet', desc: 'An alignment chat with Laxit and Sanjay followed by an offer.' }
+            ].map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-[#1A1A1A] border border-[rgba(255,255,255,0.08)] p-8 relative hover:border-[#C9A96E]/50 transition-all duration-300"
+              >
+                <div className="text-5xl font-black text-[#C9A96E]/10 mb-4">{step.step}</div>
+                <h3 className="text-lg font-bold text-[#FFFFFF] mb-3 uppercase tracking-wider">{step.title}</h3>
+                <p className="text-[#A0A0A0] text-sm leading-relaxed font-medium">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Photo */}
-      <section className="bg-[#121212] py-32 border-t border-[rgba(255,255,255,0.08)]">
+      <section className="bg-[#0F0F0F] py-32 border-t border-[rgba(255,255,255,0.08)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

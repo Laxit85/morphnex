@@ -20,13 +20,14 @@ export function SEO({
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={window.location.origin + window.location.pathname} />
+      <link rel="canonical" href={`https://morphnex.in${window.location.pathname}`} />
       
       {/* Open Graph tags (Facebook, LinkedIn, etc.) */}
       <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={name} />
+      <meta property="og:url" content={`https://morphnex.in${window.location.pathname}`} />
       <meta property="og:image" content={image} />
       
       {/* Twitter tags */}

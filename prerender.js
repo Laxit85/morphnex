@@ -278,7 +278,7 @@ async function prerender() {
 
   // Also prerender the root index.html to ensure it has the correct canonical tag
   let rootHtml = template;
-  rootHtml = rootHtml.replace(/<link id="canonical-link" rel="canonical" href="[^"]*"\s*(?:data-rh="true")?\s*\/?>/, '<link id="canonical-link" rel="canonical" href="https://morphnex.in/" data-rh="true" />');
+  rootHtml = rootHtml.replace(/<link(?: id="canonical-link")? rel="canonical" href="[^"]*"\s*(?:data-rh="true")?\s*\/?>/, '<link rel="canonical" href="https://morphnex.in/" />');
   fs.writeFileSync(TEMPLATE_PATH, rootHtml, 'utf8');
   console.log('✓ Prerendered root (/)');
 
@@ -297,8 +297,8 @@ async function prerender() {
 
     // 3. Replace Canonical Link
     html = html.replace(
-      /<link id="canonical-link" rel="canonical" href="[^"]*"\s*(?:data-rh="true")?\s*\/?>/g,
-      `<link id="canonical-link" rel="canonical" href="${url}" data-rh="true" />`
+      /<link(?: id="canonical-link")? rel="canonical" href="[^"]*"\s*(?:data-rh="true")?\s*\/?>/g,
+      `<link rel="canonical" href="${url}" />`
     );
 
     // 4. Replace Open Graph Tags

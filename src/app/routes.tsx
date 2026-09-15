@@ -1,19 +1,20 @@
 import { createBrowserRouter } from "react-router";
 import { Root } from "./components/Root";
+import { Home } from "./pages/Home";
 
 function safeLazy<T>(factory: () => Promise<T>): () => Promise<T> {
   return async () => {
     try {
       const module = await factory();
       if (typeof window !== "undefined") {
-        sessionStorage.removeItem("chunk_reload_retry");
+        sessionStorage.removeItem("morphnex_chunk_reload");
       }
       return module;
     } catch (error) {
       if (typeof window !== "undefined") {
-        const hasReloaded = sessionStorage.getItem("chunk_reload_retry");
+        const hasReloaded = sessionStorage.getItem("morphnex_chunk_reload");
         if (!hasReloaded) {
-          sessionStorage.setItem("chunk_reload_retry", "true");
+          sessionStorage.setItem("morphnex_chunk_reload", "true");
           window.location.reload();
           return new Promise<T>(() => {});
         }
@@ -30,7 +31,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        lazy: safeLazy(() => import("./pages/Home").then((m) => ({ Component: m.Home }))),
+        Component: Home,
       },
       {
         path: "about",
@@ -79,5 +80,6 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
 
 

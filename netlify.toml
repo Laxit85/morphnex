@@ -111,11 +111,19 @@
   to = "/terms/"
   status = 301
 
+# Prevent SPA fallback from returning 200 index.html for missing JS assets
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/*"
+  status = 404
+  force = true
+
 # SPA Routing Fallback (React/Vite)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
 
 # ===========================
 # Cache Headers

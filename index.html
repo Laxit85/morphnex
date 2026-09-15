@@ -67,6 +67,28 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/images/logo.jpeg" />
+
+    <!-- Global Dynamic Import Recovery -->
+    <script>
+      window.addEventListener('vite:preloadError', function(event) {
+        event.preventDefault();
+        var reloaded = sessionStorage.getItem('morphnex_chunk_reload');
+        if (!reloaded) {
+          sessionStorage.setItem('morphnex_chunk_reload', 'true');
+          window.location.reload(true);
+        }
+      });
+      window.addEventListener('error', function(event) {
+        if (event.message && (event.message.indexOf('Failed to fetch dynamically imported module') !== -1 || event.message.indexOf('Importing a module script failed') !== -1)) {
+          event.preventDefault();
+          var reloaded = sessionStorage.getItem('morphnex_chunk_reload');
+          if (!reloaded) {
+            sessionStorage.setItem('morphnex_chunk_reload', 'true');
+            window.location.reload(true);
+          }
+        }
+      }, true);
+    </script>
   </head>
 
   <body>

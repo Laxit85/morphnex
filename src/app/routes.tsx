@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { Root } from "./components/Root";
 import { Home } from "./pages/Home";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 function safeLazy<T>(factory: () => Promise<T>): () => Promise<T> {
   return async () => {
@@ -28,7 +29,9 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    ErrorBoundary: ErrorBoundary,
     children: [
+
       {
         index: true,
         Component: Home,

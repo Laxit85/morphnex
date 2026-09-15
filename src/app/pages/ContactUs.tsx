@@ -200,7 +200,7 @@ export function ContactUs() {
                   <div>
                     <h3 className="font-bold text-[#FFFFFF] mb-2 uppercase tracking-widest text-xs">Phone</h3>
                     <a
-                      href="tel:+14155551234"
+                      href="tel:+917878429752"
                       className="text-[#A0A0A0] text-lg hover:text-[#C9A96E] transition-colors"
                     >
                       +91 7878429752

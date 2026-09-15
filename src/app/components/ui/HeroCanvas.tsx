@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Lightformer, Environment, Sparkles } from '@react-three/drei';
+import { Float, Sparkles } from '@react-three/drei';
 import * as THREE from 'three';
 
-// An individual floating 3D shape
+// Optimized floating 3D shape
 function FloatingShape({
   position,
   rotation,
@@ -19,32 +19,29 @@ function FloatingShape({
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
 
-  // Slowly rotate the mesh
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += delta * 0.2;
-      meshRef.current.rotation.y += delta * 0.3;
+      meshRef.current.rotation.x += delta * 0.15;
+      meshRef.current.rotation.y += delta * 0.2;
     }
   });
 
   return (
     <Float
-      speed={1.5} // Animation speed
-      rotationIntensity={1} // XYZ rotation intensity
-      floatIntensity={2} // Up/down float intensity
-      floatingRange={[-0.2, 0.2]} // Range of y-axis values
+      speed={1.2}
+      rotationIntensity={0.8}
+      floatIntensity={1.5}
+      floatingRange={[-0.15, 0.15]}
     >
       <mesh ref={meshRef} position={position} rotation={rotation} scale={scale}>
-        {geometry === 'torus' && <torusKnotGeometry args={[1, 0.3, 128, 32]} />}
+        {geometry === 'torus' && <torusKnotGeometry args={[1, 0.3, 32, 16]} />}
         {geometry === 'icosahedron' && <icosahedronGeometry args={[1, 0]} />}
-        {geometry === 'sphere' && <sphereGeometry args={[1, 64, 64]} />}
+        {geometry === 'sphere' && <sphereGeometry args={[1, 16, 16]} />}
         
-        <meshPhysicalMaterial
+        <meshStandardMaterial
           color={color}
-          roughness={0.2}
-          metalness={0.8}
-          clearcoat={1}
-          clearcoatRoughness={0.1}
+          roughness={0.3}
+          metalness={0.7}
         />
       </mesh>
     </Float>
@@ -52,14 +49,41 @@ function FloatingShape({
 }
 
 export function HeroCanvas() {
+  const [isMobile, setIsMobile] = useState<boolean>(true);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // On mobile or before client mount, render a fast CSS gradient background
+  if (!isMounted || isMobile) {
+    return (
+      <div className="absolute inset-0 -z-10 pointer-events-none opacity-60">
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-[#C9A96E]/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-[#1A1A1A] rounded-full blur-[120px]" />
+      </div>
+    );
+  }
+
   return (
     <div className="absolute inset-0 -z-10 pointer-events-none opacity-60">
-      <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+      <Canvas
+        camera={{ position: [0, 0, 10], fov: 45 }}
+        dpr={[1, 1.5]}
+        gl={{ powerPreference: 'low-power', antialias: false }}
+      >
         <color attach="background" args={['#0F0F0F']} />
         
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} color="#ffffff" />
-        <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#C9A96E" />
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[10, 10, 5]} intensity={1.2} color="#ffffff" />
+        <directionalLight position={[-10, -10, -5]} intensity={1.0} color="#C9A96E" />
 
         {/* Floating elements */}
         <group position={[3, 0, -2]}>
@@ -86,10 +110,7 @@ export function HeroCanvas() {
           />
         </group>
 
-        <Sparkles count={50} scale={10} size={2} speed={0.4} color="#C9A96E" opacity={0.5} />
-
-        {/* Environment map for reflections */}
-        <Environment preset="city" />
+        <Sparkles count={20} scale={8} size={2} speed={0.3} color="#C9A96E" opacity={0.4} />
       </Canvas>
     </div>
   );

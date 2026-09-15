@@ -105,7 +105,7 @@ export function BlogPost() {
           
           {/* Back Button */}
           <Link
-            to="/blog"
+            to="/blog/"
             className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#A0A0A0] hover:text-[#C9A96E] transition-colors mb-10 group"
           >
             <ArrowLeft className="w-4 h-4 mr-3 group-hover:-translate-x-1.5 transition-transform" />
@@ -242,7 +242,7 @@ export function BlogPost() {
           {/* Share / Back to list row */}
           <div className="max-w-3xl mx-auto border-t border-[rgba(255,255,255,0.08)] mt-16 pt-10 flex justify-between items-center">
             <Link
-              to="/blog"
+              to="/blog/"
               className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#A0A0A0] hover:text-[#C9A96E] transition-colors group"
             >
               <ArrowLeft className="w-4 h-4 mr-3 group-hover:-translate-x-1.5 transition-transform" />
@@ -288,7 +288,7 @@ export function BlogPost() {
                       {relatedPost.title}
                     </h3>
                     <Link
-                      to={`/blog/${relatedPost.slug}`}
+                      to={`/blog/${relatedPost.slug}/`}
                       className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#C9A96E] hover:text-[#FFFFFF] transition-colors mt-4 group/btn"
                     >
                       Read Article
@@ -321,7 +321,7 @@ export function BlogPost() {
               From high-performance cloud architectures to bespoke AI systems, let's build the future of your company.
             </p>
             <Link
-              to="/contact"
+              to="/contact/"
               className="relative z-10 inline-flex h-16 items-center justify-center overflow-hidden rounded-none bg-[#C9A96E] px-12 font-bold uppercase tracking-widest text-[#0F0F0F] text-xs transition-all duration-300 hover:scale-[1.02] hover:bg-[#FFFFFF] shadow-[0_0_20px_rgba(201,169,110,0.15)] active:scale-95"
             >
               Get In Touch

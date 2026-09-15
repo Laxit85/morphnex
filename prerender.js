@@ -144,6 +144,7 @@ function generateBodyHtml(route, blogPosts, caseStudies) {
 
       return `
         <article style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+          <nav style="margin-bottom: 20px;"><a href="/blog/" style="color: #C9A96E; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">&larr; Back to Blog</a></nav>
           <header style="margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 20px;">
             <span style="text-transform: uppercase; color: #C9A96E; font-size: 11px; font-weight: bold; letter-spacing: 0.2em;">${post.category}</span>
             <h1 style="font-size: 42px; font-weight: 900; margin: 15px 0; letter-spacing: -0.02em; line-height: 1.2;">${post.title}</h1>
@@ -178,6 +179,7 @@ function generateBodyHtml(route, blogPosts, caseStudies) {
 
       return `
         <article style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+          <nav style="margin-bottom: 20px;"><a href="/case-studies/" style="color: #C9A96E; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px;">&larr; Back to Case Studies</a></nav>
           <header style="margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 20px;">
             <span style="text-transform: uppercase; color: #C9A96E; font-size: 11px; font-weight: bold; letter-spacing: 0.2em;">${study.industry}</span>
             <h1 style="font-size: 42px; font-weight: 900; margin: 15px 0; letter-spacing: -0.02em; line-height: 1.2;">${study.title}</h1>
@@ -220,9 +222,9 @@ function generateBodyHtml(route, blogPosts, caseStudies) {
           ${blogPosts.map(post => `
             <article style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
               <span style="color: #C9A96E; font-size: 10px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase;">${post.category}</span>
-              <h2 style="font-size: 24px; font-weight: 900; margin: 10px 0; text-transform: uppercase;"><a href="/blog/${post.slug}" style="color: #FFFFFF; text-decoration: none;">${post.title}</a></h2>
+              <h2 style="font-size: 24px; font-weight: 900; margin: 10px 0; text-transform: uppercase;"><a href="/blog/${post.slug}/" style="color: #FFFFFF; text-decoration: none;">${post.title}</a></h2>
               <p style="color: #A0A0A0; line-height: 1.6; margin-bottom: 20px;">${post.excerpt}</p>
-              <a href="/blog/${post.slug}" style="color: #C9A96E; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Read Full Article &rarr;</a>
+              <a href="/blog/${post.slug}/" style="color: #C9A96E; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Read Full Article &rarr;</a>
             </article>
           `).join('')}
         </section>
@@ -239,11 +241,166 @@ function generateBodyHtml(route, blogPosts, caseStudies) {
           ${caseStudies.map(study => `
             <article style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
               <span style="color: #C9A96E; font-size: 10px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase;">${study.industry}</span>
-              <h2 style="font-size: 24px; font-weight: 900; margin: 10px 0; text-transform: uppercase;"><a href="/case-studies/${study.slug}" style="color: #FFFFFF; text-decoration: none;">${study.title}</a></h2>
+              <h2 style="font-size: 24px; font-weight: 900; margin: 10px 0; text-transform: uppercase;"><a href="/case-studies/${study.slug}/" style="color: #FFFFFF; text-decoration: none;">${study.title}</a></h2>
               <p style="color: #A0A0A0; line-height: 1.6; margin-bottom: 20px;">${study.challenge}</p>
-              <a href="/case-studies/${study.slug}" style="color: #C9A96E; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Read Case Study &rarr;</a>
+              <a href="/case-studies/${study.slug}/" style="color: #C9A96E; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Read Case Study &rarr;</a>
             </article>
           `).join('')}
+        </section>
+      </main>
+    `;
+  }
+
+  if (route.path === 'about') {
+    return `
+      <main style="max-width: 900px; margin: 0 auto; padding: 60px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+        <h1 style="font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; text-align: center; margin-bottom: 20px;">About <span style="color: #C9A96E;">Morphnex</span></h1>
+        <p style="text-align: center; color: #A0A0A0; font-size: 20px; line-height: 1.6; max-width: 700px; margin: 0 auto 50px auto;">We design and engineer bespoke software solutions, high-performance cloud architectures, and intelligent digital products for ambitious enterprises worldwide.</p>
+        
+        <section style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 40px; margin-bottom: 40px;">
+          <h2 style="font-size: 28px; font-weight: 900; color: #FFFFFF; margin-top: 0; margin-bottom: 20px; text-transform: uppercase;">Our Core Mission</h2>
+          <p style="color: #A0A0A0; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">At Morphnex Technologies, we bridge the gap between visionary product strategy and world-class software execution. From scalable web systems to resilient cloud deployments, our team focuses on technical perfection and measurable business results.</p>
+        </section>
+
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 50px;">
+          <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 25px;">
+            <h3 style="color: #C9A96E; font-size: 18px; margin-top: 0; font-weight: bold; text-transform: uppercase;">Engineering Excellence</h3>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6;">Clean code, automated testing pipelines, and zero-compromise architecture standards.</p>
+          </div>
+          <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 25px;">
+            <h3 style="color: #C9A96E; font-size: 18px; margin-top: 0; font-weight: bold; text-transform: uppercase;">Zero-Trust Security</h3>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6;">Built-in data privacy, PCI-DSS compliance, and encrypted infrastructure by default.</p>
+          </div>
+          <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 25px;">
+            <h3 style="color: #C9A96E; font-size: 18px; margin-top: 0; font-weight: bold; text-transform: uppercase;">Rapid Delivery</h3>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6;">Modern DevOps and CI/CD pipelines to turn complex requirements into production software fast.</p>
+          </div>
+        </section>
+
+        <div style="text-align: center;">
+          <a href="/contact/" style="display: inline-block; border: 1px solid #C9A96E; background: #C9A96E; color: #0F0F0F; padding: 14px 36px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 13px; letter-spacing: 0.1em;">Partner With Us</a>
+        </div>
+      </main>
+    `;
+  }
+
+  if (route.path === 'team') {
+    return `
+      <main style="max-width: 900px; margin: 0 auto; padding: 60px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+        <h1 style="font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; text-align: center; margin-bottom: 20px;">Meet The <span style="color: #C9A96E;">Team</span></h1>
+        <p style="text-align: center; color: #A0A0A0; font-size: 20px; line-height: 1.6; max-width: 700px; margin: 0 auto 50px auto;">Meet the engineers, architects, and product designers building high-impact enterprise applications at Morphnex.</p>
+
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px;">
+          <article style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px; text-align: center;">
+            <h2 style="font-size: 22px; font-weight: 900; color: #FFFFFF; margin-bottom: 5px;">Laxit Jangid</h2>
+            <span style="color: #C9A96E; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.15em;">Founder & Lead Architect</span>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6; margin-top: 15px;">Full-stack software architect specializing in scalable microservices, cloud deployments, and high-performance Web applications.</p>
+          </article>
+          <article style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px; text-align: center;">
+            <h2 style="font-size: 22px; font-weight: 900; color: #FFFFFF; margin-bottom: 5px;">Morphnex Engineering Team</h2>
+            <span style="color: #C9A96E; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.15em;">Cloud & AI Specialists</span>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6; margin-top: 15px;">Elite frontend specialists, cloud architects, and machine learning engineers dedicated to enterprise software mastery.</p>
+          </article>
+        </section>
+      </main>
+    `;
+  }
+
+  if (route.path === 'services') {
+    return `
+      <main style="max-width: 900px; margin: 0 auto; padding: 60px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+        <h1 style="font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; text-align: center; margin-bottom: 20px;">Our <span style="color: #C9A96E;">Services</span></h1>
+        <p style="text-align: center; color: #A0A0A0; font-size: 20px; line-height: 1.6; max-width: 700px; margin: 0 auto 50px auto;">Comprehensive software engineering solutions tailored to propel your business forward.</p>
+
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px;">
+          <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
+            <h2 style="color: #FFFFFF; font-size: 20px; font-weight: 900; margin-top: 0; margin-bottom: 10px; text-transform: uppercase;">Web Development</h2>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6;">High-speed React, Next.js, and Node.js applications with pixel-perfect responsive UI and SEO optimization.</p>
+          </div>
+          <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
+            <h2 style="color: #FFFFFF; font-size: 20px; font-weight: 900; margin-top: 0; margin-bottom: 10px; text-transform: uppercase;">Cloud Architecture & DevOps</h2>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6;">AWS cloud migrations, Kubernetes cluster orchestration, Terraform IaC, and zero-downtime CI/CD pipelines.</p>
+          </div>
+          <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
+            <h2 style="color: #FFFFFF; font-size: 20px; font-weight: 900; margin-top: 0; margin-bottom: 10px; text-transform: uppercase;">AI & Machine Learning</h2>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6;">Integrating LLMs, predictive telemetry models, and intelligent AI agents directly into enterprise workflows.</p>
+          </div>
+          <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
+            <h2 style="color: #FFFFFF; font-size: 20px; font-weight: 900; margin-top: 0; margin-bottom: 10px; text-transform: uppercase;">Mobile Development</h2>
+            <p style="color: #A0A0A0; font-size: 14px; line-height: 1.6;">Cross-platform iOS and Android mobile apps powered by React Native with offline sync and high security.</p>
+          </div>
+        </section>
+      </main>
+    `;
+  }
+
+  if (route.path === 'career') {
+    return `
+      <main style="max-width: 900px; margin: 0 auto; padding: 60px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+        <h1 style="font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; text-align: center; margin-bottom: 20px;">Careers at <span style="color: #C9A96E;">Morphnex</span></h1>
+        <p style="text-align: center; color: #A0A0A0; font-size: 20px; line-height: 1.6; max-width: 700px; margin: 0 auto 50px auto;">Work on high-impact enterprise software projects alongside an elite team of engineers and designers.</p>
+
+        <section style="margin-bottom: 50px;">
+          <h2 style="font-size: 28px; font-weight: 900; color: #FFFFFF; margin-bottom: 30px; text-transform: uppercase;">Open Positions</h2>
+          
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <article style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
+              <span style="color: #C9A96E; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.15em;">Engineering • Full-Time</span>
+              <h3 style="font-size: 22px; font-weight: 900; color: #FFFFFF; margin: 10px 0;">Senior Full-Stack Engineer</h3>
+              <p style="color: #A0A0A0; font-size: 15px; line-height: 1.6;">Experience with React, Node.js, TypeScript, PostgreSQL, and cloud infrastructure. Lead complex web projects and mentor junior developers.</p>
+              <a href="mailto:laxitjangid2k5@gmail.com?subject=Application:%20Senior%20Full-Stack%20Engineer" style="display: inline-block; margin-top: 15px; color: #C9A96E; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Apply Now &rarr;</a>
+            </article>
+
+            <article style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
+              <span style="color: #C9A96E; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.15em;">DevOps & Infrastructure • Full-Time</span>
+              <h3 style="font-size: 22px; font-weight: 900; color: #FFFFFF; margin: 10px 0;">Cloud Architecture Specialist</h3>
+              <p style="color: #A0A0A0; font-size: 15px; line-height: 1.6;">Experience with AWS, Kubernetes, Docker, Terraform, and automated deployment pipelines for enterprise applications.</p>
+              <a href="mailto:laxitjangid2k5@gmail.com?subject=Application:%20Cloud%20Architecture%20Specialist" style="display: inline-block; margin-top: 15px; color: #C9A96E; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Apply Now &rarr;</a>
+            </article>
+
+            <article style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px;">
+              <span style="color: #C9A96E; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.15em;">Design • Full-Time</span>
+              <h3 style="font-size: 22px; font-weight: 900; color: #FFFFFF; margin: 10px 0;">Lead UI/UX Designer</h3>
+              <p style="color: #A0A0A0; font-size: 15px; line-height: 1.6;">Design high-end luxury digital interfaces, interactive design systems, and responsive web/mobile user flows.</p>
+              <a href="mailto:laxitjangid2k5@gmail.com?subject=Application:%20Lead%20UI/UX%20Designer" style="display: inline-block; margin-top: 15px; color: #C9A96E; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Apply Now &rarr;</a>
+            </article>
+          </div>
+        </section>
+      </main>
+    `;
+  }
+
+  if (route.path === 'contact') {
+    return `
+      <main style="max-width: 800px; margin: 0 auto; padding: 60px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+        <h1 style="font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; text-align: center; margin-bottom: 20px;">Contact <span style="color: #C9A96E;">Morphnex</span></h1>
+        <p style="text-align: center; color: #A0A0A0; font-size: 20px; line-height: 1.6; margin-bottom: 50px;">Ready to start your next enterprise project? Get in touch with our engineering team today.</p>
+
+        <section style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 40px; margin-bottom: 40px;">
+          <h2 style="font-size: 24px; font-weight: 900; color: #FFFFFF; margin-top: 0; margin-bottom: 25px; text-transform: uppercase;">Direct Contact Information</h2>
+          <p style="color: #A0A0A0; font-size: 16px; margin-bottom: 15px;"><strong>Location:</strong> Jodhpur, Rajasthan, India</p>
+          <p style="color: #A0A0A0; font-size: 16px; margin-bottom: 15px;"><strong>Phone:</strong> <a href="tel:+917878429752" style="color: #C9A96E; text-decoration: none;">+91 7878429752</a></p>
+          <p style="color: #A0A0A0; font-size: 16px; margin-bottom: 15px;"><strong>Email:</strong> <a href="mailto:laxitjangid2k5@gmail.com" style="color: #C9A96E; text-decoration: none;">laxitjangid2k5@gmail.com</a></p>
+        </section>
+      </main>
+    `;
+  }
+
+  if (route.path === 'terms') {
+    return `
+      <main style="max-width: 800px; margin: 0 auto; padding: 60px 20px; font-family: system-ui, -apple-system, sans-serif; background: #0F0F0F; color: #FFFFFF;">
+        <h1 style="font-size: 42px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 20px;">Terms & <span style="color: #C9A96E;">Conditions</span></h1>
+        <p style="color: #A0A0A0; font-size: 16px; line-height: 1.8; margin-bottom: 30px;">Read the official terms and conditions governing engagement with Morphnex Technologies.</p>
+
+        <section style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08); padding: 30px; line-height: 1.8; color: #A0A0A0;">
+          <h2 style="color: #FFFFFF; font-size: 20px; font-weight: bold; margin-top: 0;">1. Scope of Services</h2>
+          <p>Morphnex delivers custom software development, cloud engineering, and strategic IT consulting as outlined in individual project proposals and client contracts.</p>
+
+          <h2 style="color: #FFFFFF; font-size: 20px; font-weight: bold; margin-top: 25px;">2. Intellectual Property</h2>
+          <p>Upon full milestone payment, clients receive exclusive ownership rights to customized deliverable application source code.</p>
+
+          <h2 style="color: #FFFFFF; font-size: 20px; font-weight: bold; margin-top: 25px;">3. Confidentiality & NDAs</h2>
+          <p>We treat all client business data, product plans, and proprietary algorithms under strict non-disclosure agreements.</p>
         </section>
       </main>
     `;
@@ -256,6 +413,93 @@ function generateBodyHtml(route, blogPosts, caseStudies) {
       <a href="/" style="display: inline-block; border: 1px solid #C9A96E; color: #C9A96E; padding: 12px 30px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em;">Go back home</a>
     </main>
   `;
+}
+
+function generateJsonLd(route, blogPosts, caseStudies) {
+  const canonicalUrl = route.path ? `https://morphnex.in/${route.path}/` : 'https://morphnex.in/';
+
+  if (route.path.startsWith('blog/')) {
+    const slug = route.path.substring(5);
+    const post = blogPosts.find(p => p.slug === slug);
+    if (post) {
+      return JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        'headline': post.title,
+        'description': post.excerpt,
+        'image': post.image,
+        'author': {
+          '@type': 'Person',
+          'name': post.author
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Morphnex Technologies',
+          'logo': {
+            '@type': 'ImageObject',
+            'url': 'https://morphnex.in/images/logo.webp'
+          }
+        },
+        'datePublished': '2026-03-01',
+        'url': canonicalUrl
+      });
+    }
+  }
+
+  if (route.path.startsWith('case-studies/')) {
+    const slug = route.path.substring(13);
+    const study = caseStudies.find(c => c.slug === slug);
+    if (study) {
+      return JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'TechArticle',
+        'headline': study.title,
+        'description': study.challenge,
+        'image': study.image,
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Morphnex Technologies'
+        },
+        'url': canonicalUrl
+      });
+    }
+  }
+
+  if (route.path === 'career') {
+    return JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'JobPosting',
+      'title': 'Senior Full-Stack Engineer',
+      'description': 'Senior Full-Stack Engineer at Morphnex Technologies focusing on React, Node.js, and cloud systems.',
+      'hiringOrganization': {
+        '@type': 'Organization',
+        'name': 'Morphnex Technologies',
+        'sameAs': 'https://morphnex.in/'
+      },
+      'jobLocation': {
+        '@type': 'Place',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': 'Jodhpur',
+          'addressRegion': 'Rajasthan',
+          'addressCountry': 'IN'
+        }
+      }
+    });
+  }
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    'name': route.title,
+    'description': route.description,
+    'url': canonicalUrl,
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Morphnex Technologies',
+      'url': 'https://morphnex.in/'
+    }
+  });
 }
 
 async function prerender() {
@@ -281,9 +525,25 @@ async function prerender() {
 
   const template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
 
-  // Also prerender the root index.html to ensure it has the correct canonical tag
+  // Also prerender the root index.html to ensure it has the correct canonical tag and JSON-LD
   let rootHtml = template;
   rootHtml = rootHtml.replace(/<link(?: id="canonical-link")? rel="canonical" href="[^"]*"\s*(?:data-rh="true")?\s*\/?>/, '<link rel="canonical" href="https://morphnex.in/" />');
+  
+  const rootSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': 'Morphnex Technologies',
+    'url': 'https://morphnex.in/',
+    'logo': 'https://morphnex.in/images/logo.webp',
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'telephone': '+91-7878429752',
+      'contactType': 'customer support',
+      'email': 'laxitjangid2k5@gmail.com'
+    }
+  });
+
+  rootHtml = rootHtml.replace('</head>', `<script type="application/ld+json">${rootSchema}</script></head>`);
   fs.writeFileSync(TEMPLATE_PATH, rootHtml, 'utf8');
   console.log('✓ Prerendered root (/)');
 
@@ -330,7 +590,11 @@ async function prerender() {
       `<meta name="twitter:description" content="${route.description}" />`
     );
 
-    // 6. Generate and Inject Semantic Body Content
+    // 6. Inject JSON-LD Schema
+    const jsonLd = generateJsonLd(route, blogPosts, caseStudies);
+    html = html.replace('</head>', `<script type="application/ld+json">${jsonLd}</script></head>`);
+
+    // 7. Generate and Inject Semantic Body Content
     const bodyContent = generateBodyHtml(route, blogPosts, caseStudies);
     html = html.replace('<div id="root"></div>', `<div id="root">${bodyContent}</div>`);
 

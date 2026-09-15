@@ -6,10 +6,112 @@
   publish = "dist"
 
 # ===========================
-# Redirects
+# Redirects (301 canonical & legacy fixes)
 # ===========================
 
-# SPA Routing (React/Vite)
+# Legacy & Shortened Blog URLs -> Canonical trailing slash URLs
+[[redirects]]
+  from = "/blog/future-of-ai-software-development"
+  to = "/blog/future-of-ai-in-software-development/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/future-of-ai-software-development/"
+  to = "/blog/future-of-ai-in-software-development/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/scalable-microservices-architecture"
+  to = "/blog/building-scalable-microservices-architecture/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/scalable-microservices-architecture/"
+  to = "/blog/building-scalable-microservices-architecture/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/devops-continuous-delivery"
+  to = "/blog/devops-best-practices-continuous-delivery/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/devops-continuous-delivery/"
+  to = "/blog/devops-best-practices-continuous-delivery/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/react-performance-optimization"
+  to = "/blog/react-performance-optimization-techniques/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/react-performance-optimization/"
+  to = "/blog/react-performance-optimization-techniques/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/web-application-security-2026"
+  to = "/blog/securing-web-applications-2026/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/web-application-security-2026/"
+  to = "/blog/securing-web-applications-2026/"
+  status = 301
+  force = true
+
+# Non-trailing slash -> Trailing slash canonical redirects
+[[redirects]]
+  from = "/about"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/team"
+  to = "/team/"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/services/"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/case-studies/"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/career"
+  to = "/career/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms/"
+  status = 301
+
+# SPA Routing Fallback (React/Vite)
 [[redirects]]
   from = "/*"
   to = "/index.html"

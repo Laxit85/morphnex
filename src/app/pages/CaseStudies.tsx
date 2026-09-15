@@ -98,7 +98,7 @@ export function CaseStudies() {
 
                 <div className="px-8 pb-8 pt-0">
                   <Link
-                    to={`/case-studies/${study.slug}`}
+                    to={`/case-studies/${study.slug}/`}
                     className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#C9A96E] hover:text-[#FFFFFF] transition-colors group/btn"
                   >
                     View Full Case Study
@@ -131,7 +131,7 @@ export function CaseStudies() {
               Let's discuss how we can help transform your business with scalable, enterprise-grade technology solutions.
             </p>
             <Link
-              to="/contact"
+              to="/contact/"
               className="relative z-10 inline-flex h-16 items-center justify-center overflow-hidden rounded-none bg-[#C9A96E] px-12 font-bold uppercase tracking-widest text-[#0F0F0F] text-xs transition-all duration-300 hover:scale-[1.02] hover:bg-[#FFFFFF] shadow-[0_0_20px_rgba(201,169,110,0.15)] active:scale-95"
             >
               Start Your Project

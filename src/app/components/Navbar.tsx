@@ -4,9 +4,9 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence, useScroll } from 'motion/react';
 
 const navLinks = [
-  { name: 'Services', path: '/services' },
-  { name: 'Case Studies', path: '/case-studies' },
-  { name: 'Career', path: '/career' },
+  { name: 'Services', path: '/services/' },
+  { name: 'Case Studies', path: '/case-studies/' },
+  { name: 'Career', path: '/career/' },
 ];
 
 export function Navbar() {
@@ -22,8 +22,12 @@ export function Navbar() {
     });
   }, [scrollY]);
 
-  const isActive = (path: string) => location.pathname === path || (path !== '/' && location.pathname.startsWith(path + '/'));
-  const isAboutActive = isActive('/about') || isActive('/team') || location.pathname.startsWith('/blog') || isActive('/terms');
+  const isActive = (path: string) => {
+    const normTarget = path.endsWith('/') ? path : `${path}/`;
+    const normCurrent = location.pathname.endsWith('/') ? location.pathname : `${location.pathname}/`;
+    return normCurrent === normTarget || (normTarget !== '/' && normCurrent.startsWith(normTarget));
+  };
+  const isAboutActive = isActive('/about/') || isActive('/team/') || location.pathname.startsWith('/blog') || isActive('/terms/');
 
   return (
     <motion.nav
@@ -86,10 +90,10 @@ export function Navbar() {
                     className="absolute top-[100%] left-0 w-56 bg-[#1A1A1A]/95 backdrop-blur-xl rounded-none shadow-2xl border border-[rgba(255,255,255,0.08)] py-3 overflow-hidden origin-top-left"
                   >
                     {[
-                      { name: 'About Us', path: '/about' },
-                      { name: 'Meet the Team', path: '/team' },
-                      { name: 'Blog', path: '/blog' },
-                      { name: 'Terms & Conditions', path: '/terms' },
+                      { name: 'About Us', path: '/about/' },
+                      { name: 'Meet the Team', path: '/team/' },
+                      { name: 'Blog', path: '/blog/' },
+                      { name: 'Terms & Conditions', path: '/terms/' },
                     ].map((item) => (
                       <Link
                         key={item.path}
@@ -132,13 +136,13 @@ export function Navbar() {
           {/* Right Side - Email & CTA */}
           <div className="hidden md:flex items-center space-x-8">
             <a
-              href="mailto:contact@morphnex.com"
+              href="mailto:laxitjangid2k5@gmail.com"
               className="text-xs font-bold tracking-widest uppercase text-[#A0A0A0] hover:text-[#C9A96E] transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#C9A96E] hover:after:w-full after:transition-all after:duration-300"
             >
               laxitjangid2k5@gmail.com
             </a>
             <Link
-              to="/contact"
+              to="/contact/"
               className="relative inline-flex h-10 items-center justify-center overflow-hidden rounded-none border border-[#C9A96E] bg-transparent px-6 font-bold uppercase tracking-widest text-xs text-[#C9A96E] transition-all duration-300 hover:bg-[#C9A96E] hover:text-[#0F0F0F] shadow-[0_0_15px_rgba(201,169,110,0.15)] hover:shadow-[0_0_25px_rgba(201,169,110,0.3)] active:scale-95"
             >
               Get in Touch
@@ -169,7 +173,7 @@ export function Navbar() {
             <div className="px-4 py-6 space-y-6">
               <div className="space-y-2">
                 <p className="px-4 text-[10px] font-bold text-[#A0A0A0]/60 uppercase tracking-[0.2em] mb-4">Company</p>
-                {['/about', '/team', '/blog', '/terms'].map((path, idx) => (
+                {['/about/', '/team/', '/blog/', '/terms/'].map((path, idx) => (
                   <Link
                     key={path}
                     to={path}
@@ -197,7 +201,7 @@ export function Navbar() {
 
               <div className="pt-6 pb-2 px-4 border-t border-[rgba(255,255,255,0.08)]">
                 <Link
-                  to="/contact"
+                  to="/contact/"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block w-full border border-[#C9A96E] text-[#C9A96E] px-6 py-4 text-center font-bold uppercase tracking-widest text-xs hover:bg-[#C9A96E] hover:text-[#0F0F0F] transition-all duration-300"
                 >

@@ -15,17 +15,17 @@ export function Footer() {
           <div>
             <h3 className="text-[#FFFFFF] font-bold uppercase tracking-widest text-sm mb-6">Services</h3>
             <ul className="space-y-3 font-medium">
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Web Development</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Mobile Development</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">AI & ML</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">DevOps</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Cloud Solutions</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">UI/UX Design</Link></li>
-               <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Consulting</Link></li>
-               <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Custom Software Development</Link></li>
-               <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Enterprise Solutions</Link></li>
-               <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Blockchain</Link></li>
-               <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Data Analytics</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Web Development</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Mobile Development</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">AI & ML</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">DevOps</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Cloud Solutions</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">UI/UX Design</Link></li>
+               <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Consulting</Link></li>
+               <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Custom Software Development</Link></li>
+               <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Enterprise Solutions</Link></li>
+               <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Blockchain</Link></li>
+               <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Data Analytics</Link></li>
             </ul>
           </div>
 
@@ -33,17 +33,17 @@ export function Footer() {
           <div>
             <h3 className="text-[#FFFFFF] font-bold uppercase tracking-widest text-sm mb-6">Domains</h3>
             <ul className="space-y-3 font-medium">
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">FinTech</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">E-Commerce</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Healthcare</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Education</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Entertainment</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Real Estate</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Travel & Hospitality</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Logistics & Supply Chain</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Manufacturing</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Retail & E-Commerce</Link></li>
-              <li><Link to="/services" className="hover:text-[#C9A96E] transition-colors">Startups & Tech Innovators</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">FinTech</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">E-Commerce</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Healthcare</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Education</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Entertainment</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Real Estate</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Travel & Hospitality</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Logistics & Supply Chain</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Manufacturing</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Retail & E-Commerce</Link></li>
+              <li><Link to="/services/" className="hover:text-[#C9A96E] transition-colors">Startups & Tech Innovators</Link></li>
             </ul>
           </div>
 
@@ -51,16 +51,16 @@ export function Footer() {
           <div>
             <h3 className="text-[#FFFFFF] font-bold uppercase tracking-widest text-sm mb-6">Industries</h3>
             <ul className="space-y-3 font-medium">
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Banking</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Retail</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Manufacturing</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Logistics</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Technology</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Healthcare</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Education</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">FinTech</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Startups & Tech Innovators</Link></li>
-              <li><Link to="/case-studies" className="hover:text-[#C9A96E] transition-colors">Travel & Hospitality</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Banking</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Retail</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Manufacturing</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Logistics</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Technology</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Healthcare</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Education</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">FinTech</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Startups & Tech Innovators</Link></li>
+              <li><Link to="/case-studies/" className="hover:text-[#C9A96E] transition-colors">Travel & Hospitality</Link></li>
               
             </ul>
           </div>
@@ -69,12 +69,12 @@ export function Footer() {
           <div>
             <h3 className="text-[#FFFFFF] font-bold uppercase tracking-widest text-sm mb-6">About</h3>
             <ul className="space-y-3 font-medium">
-              <li><Link to="/about" className="hover:text-[#C9A96E] transition-colors">About Us</Link></li>
-              <li><Link to="/team" className="hover:text-[#C9A96E] transition-colors">Our Team</Link></li>
-              <li><Link to="/career" className="hover:text-[#C9A96E] transition-colors">Careers</Link></li>
-              <li><Link to="/blog" className="hover:text-[#C9A96E] transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-[#C9A96E] transition-colors">Contact</Link></li>
-              <li><Link to="/terms" className="hover:text-[#C9A96E] transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/about/" className="hover:text-[#C9A96E] transition-colors">About Us</Link></li>
+              <li><Link to="/team/" className="hover:text-[#C9A96E] transition-colors">Our Team</Link></li>
+              <li><Link to="/career/" className="hover:text-[#C9A96E] transition-colors">Careers</Link></li>
+              <li><Link to="/blog/" className="hover:text-[#C9A96E] transition-colors">Blog</Link></li>
+              <li><Link to="/contact/" className="hover:text-[#C9A96E] transition-colors">Contact</Link></li>
+              <li><Link to="/terms/" className="hover:text-[#C9A96E] transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 

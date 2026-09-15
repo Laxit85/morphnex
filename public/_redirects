@@ -1,6 +1,21 @@
-/blog/devops-continuous-delivery /blog/devops-best-practices-continuous-delivery/ 301
-/blog/react-performance-optimization /blog/react-performance-optimization-techniques/ 301
-/blog/scalable-microservices-architecture /blog/building-scalable-microservices-architecture/ 301
-/blog/web-application-security-2026 /blog/securing-web-applications-2026/ 301
+/blog/future-of-ai-software-development /blog/future-of-ai-in-software-development/ 301!
+/blog/future-of-ai-software-development/ /blog/future-of-ai-in-software-development/ 301!
+/blog/devops-continuous-delivery /blog/devops-best-practices-continuous-delivery/ 301!
+/blog/devops-continuous-delivery/ /blog/devops-best-practices-continuous-delivery/ 301!
+/blog/react-performance-optimization /blog/react-performance-optimization-techniques/ 301!
+/blog/react-performance-optimization/ /blog/react-performance-optimization-techniques/ 301!
+/blog/scalable-microservices-architecture /blog/building-scalable-microservices-architecture/ 301!
+/blog/scalable-microservices-architecture/ /blog/building-scalable-microservices-architecture/ 301!
+/blog/web-application-security-2026 /blog/securing-web-applications-2026/ 301!
+/blog/web-application-security-2026/ /blog/securing-web-applications-2026/ 301!
+
+/about /about/ 301
+/team /team/ 301
+/services /services/ 301
+/case-studies /case-studies/ 301
+/blog /blog/ 301
+/career /career/ 301
+/contact /contact/ 301
+/terms /terms/ 301
 
 /* /index.html 200

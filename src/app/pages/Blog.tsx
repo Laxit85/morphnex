@@ -77,7 +77,7 @@ export function Blog() {
                     </div>
                     
                     <Link
-                      to={`/blog/${post.slug}`}
+                      to={`/blog/${post.slug}/`}
                       className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-[#C9A96E] hover:text-[#FFFFFF] transition-colors group/btn"
                     >
                       Read Full Article

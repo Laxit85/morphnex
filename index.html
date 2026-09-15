@@ -7,14 +7,19 @@
 
     <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" fetchpriority="high" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6EYXYQG9J"></script>
+    <!-- Google Analytics (Lazy Loaded) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-N6EYXYQG9J';
+        script.async = true;
+        document.head.appendChild(script);
 
-      gtag('config', 'G-N6EYXYQG9J');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N6EYXYQG9J');
+      });
     </script>
 
     <!-- Basic Meta -->

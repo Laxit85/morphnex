@@ -1,14 +1,10 @@
-import { lazy, Suspense } from 'react';
 import { Link } from 'react-router';
 import { Check, ArrowRight, Users, Target, Award, ArrowUpRight } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SEO } from '../components/SEO';
 import { TiltCard } from '../components/ui/TiltCard';
-
-const HeroCanvas = lazy(() =>
-  import('../components/ui/HeroCanvas').then((m) => ({ default: m.HeroCanvas }))
-);
+import { HeroCanvas } from '../components/ui/HeroCanvas';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,9 +25,6 @@ const itemVariants = {
 };
 
 export function Home() {
-  const { scrollYProgress } = useScroll();
-  const yParallax = useTransform(scrollYProgress, [0, 1], [0, -150]);
-
   return (
     <div className="bg-background text-foreground overflow-hidden">
       <SEO title="Morphnex" description="Morphnex provides top-tier software engineering, AI/ML solutions, and premium UI/UX transformations." />
@@ -54,9 +47,7 @@ export function Home() {
         <div className="absolute top-1/4 left-1/10 w-[500px] h-[500px] bg-[#C9A96E]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse duration-[8000ms]" />
         <div className="absolute bottom-1/4 right-1/10 w-[400px] h-[400px] bg-[#FFFFFF]/3 rounded-full blur-[120px] pointer-events-none -z-10" />
 
-        <Suspense fallback={<div className="absolute inset-0 bg-[#0F0F0F] -z-10" />}>
-          <HeroCanvas />
-        </Suspense>
+        <HeroCanvas />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <motion.div
             variants={containerVariants}
@@ -88,7 +79,7 @@ export function Home() {
               </motion.p>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4">
                 <Link
-                  to="/contact"
+                  to="/contact/"
                   className="w-full sm:w-auto relative inline-flex h-14 items-center justify-center overflow-hidden rounded-none bg-[#C9A96E] px-8 font-bold uppercase tracking-widest text-[#0F0F0F] text-xs shadow-[0_4px_14px_0_rgba(201,169,110,0.39)] transition-all duration-300 hover:scale-[1.02] hover:bg-[#FFFFFF] hover:shadow-[0_6px_20px_rgba(255,255,255,0.2)] active:scale-95 group"
                 >
                   <span className="mr-2">Start Your Project</span>
@@ -106,7 +97,7 @@ export function Home() {
             </div>
 
             {/* Right - 3D Service Cards */}
-            <motion.div style={{ y: yParallax }} className="grid gap-6 perspective-1000 mt-12 lg:mt-0">
+            <motion.div className="grid gap-6 perspective-1000 mt-12 lg:mt-0">
               <motion.div variants={itemVariants}>
                 <TiltCard className="p-[1px] bg-[rgba(255,255,255,0.08)] hover:bg-[#C9A96E]/50 transition-colors duration-500 rounded-lg shadow-[0_15px_30px_rgba(0,0,0,0.5)]">
                   <div className="relative h-48 rounded-lg overflow-hidden group bg-[#0F0F0F] p-1.5">

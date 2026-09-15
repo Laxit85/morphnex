@@ -62,37 +62,35 @@ export function Home() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C9A96E] opacity-75"></span>
                 </span>
                 <span className="text-xs font-bold uppercase tracking-widest text-[#C9A96E]">
-                  Building the Future of Web
+                  AI & Enterprise Software Development
                 </span>
               </motion.div>
               <motion.h1
                 variants={itemVariants}
                 className="text-4xl sm:text-6xl md:text-7xl font-black text-[#FFFFFF] mb-6 leading-[1.1] tracking-tighter uppercase"
               >
-                Engineering <br />
+                Engineered for <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C9A96E] to-[#FFFFFF]">
-                  Excellence
+                  Scale & Impact
                 </span>
               </motion.h1>
-              <motion.p variants={itemVariants} className="text-xl text-[#A0A0A0] font-medium mb-10 leading-relaxed max-w-lg">
-                We transform businesses with cutting-edge technology. Our expert team delivers scalable software, AI-driven insights, and cloud infrastructure that powers your digital evolution.
+              <motion.p variants={itemVariants} className="text-xl text-[#A0A0A0] font-medium mb-10 leading-relaxed max-w-xl">
+                Morphnex delivers custom AI/ML integrations, cloud architecture, and web platforms for ambitious enterprises and growing tech companies—built for 99.9% reliability and maximum performance.
               </motion.p>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4">
                 <Link
                   to="/contact/"
                   className="w-full sm:w-auto relative inline-flex h-14 items-center justify-center overflow-hidden rounded-none bg-[#C9A96E] px-8 font-bold uppercase tracking-widest text-[#0F0F0F] text-xs shadow-[0_4px_14px_0_rgba(201,169,110,0.39)] transition-all duration-300 hover:scale-[1.02] hover:bg-[#FFFFFF] hover:shadow-[0_6px_20px_rgba(255,255,255,0.2)] active:scale-95 group"
                 >
-                  <span className="mr-2">Start Your Project</span>
+                  <span className="mr-2">Start a Project</span>
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <div className="flex items-center space-x-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#A0A0A0] w-full sm:w-auto px-4 mt-4 sm:mt-0">
-                  <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full border border-[rgba(255,255,255,0.2)] bg-[#1A1A1A] flex items-center justify-center text-[10px] text-[#C9A96E] font-bold">M1</div>
-                    <div className="w-8 h-8 rounded-full border border-[rgba(255,255,255,0.2)] bg-[#262626] flex items-center justify-center text-[10px] text-[#FFFFFF] font-bold">M2</div>
-                    <div className="w-8 h-8 rounded-full border border-[rgba(255,255,255,0.2)] bg-[#C9A96E] flex items-center justify-center text-[10px] text-[#0F0F0F] font-bold">M3</div>
-                  </div>
-                  <span className="transition-colors duration-300 hover:text-[#FFFFFF]">Trusted by innovative brands</span>
-                </div>
+                <Link
+                  to="/case-studies/"
+                  className="w-full sm:w-auto relative inline-flex h-14 items-center justify-center overflow-hidden rounded-none border border-[rgba(255,255,255,0.2)] bg-transparent px-8 font-bold uppercase tracking-widest text-[#FFFFFF] text-xs transition-all duration-300 hover:border-[#C9A96E] hover:text-[#C9A96E] active:scale-95"
+                >
+                  View Our Work
+                </Link>
               </motion.div>
             </div>
 

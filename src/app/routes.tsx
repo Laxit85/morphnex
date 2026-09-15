@@ -1,6 +1,28 @@
 import { createBrowserRouter } from "react-router";
 import { Root } from "./components/Root";
 
+function safeLazy<T>(factory: () => Promise<T>): () => Promise<T> {
+  return async () => {
+    try {
+      const module = await factory();
+      if (typeof window !== "undefined") {
+        sessionStorage.removeItem("chunk_reload_retry");
+      }
+      return module;
+    } catch (error) {
+      if (typeof window !== "undefined") {
+        const hasReloaded = sessionStorage.getItem("chunk_reload_retry");
+        if (!hasReloaded) {
+          sessionStorage.setItem("chunk_reload_retry", "true");
+          window.location.reload();
+          return new Promise<T>(() => {});
+        }
+      }
+      throw error;
+    }
+  };
+}
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -8,52 +30,54 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        lazy: () => import("./pages/Home").then((m) => ({ Component: m.Home })),
+        lazy: safeLazy(() => import("./pages/Home").then((m) => ({ Component: m.Home }))),
       },
       {
         path: "about",
-        lazy: () => import("./pages/AboutUs").then((m) => ({ Component: m.AboutUs })),
+        lazy: safeLazy(() => import("./pages/AboutUs").then((m) => ({ Component: m.AboutUs }))),
       },
       {
         path: "team",
-        lazy: () => import("./pages/MeetTheTeam").then((m) => ({ Component: m.MeetTheTeam })),
+        lazy: safeLazy(() => import("./pages/MeetTheTeam").then((m) => ({ Component: m.MeetTheTeam }))),
       },
       {
         path: "blog",
-        lazy: () => import("./pages/Blog").then((m) => ({ Component: m.Blog })),
+        lazy: safeLazy(() => import("./pages/Blog").then((m) => ({ Component: m.Blog }))),
       },
       {
         path: "blog/:slug",
-        lazy: () => import("./pages/BlogPost").then((m) => ({ Component: m.BlogPost })),
+        lazy: safeLazy(() => import("./pages/BlogPost").then((m) => ({ Component: m.BlogPost }))),
       },
       {
         path: "services",
-        lazy: () => import("./pages/Services").then((m) => ({ Component: m.Services })),
+        lazy: safeLazy(() => import("./pages/Services").then((m) => ({ Component: m.Services }))),
       },
       {
         path: "case-studies",
-        lazy: () => import("./pages/CaseStudies").then((m) => ({ Component: m.CaseStudies })),
+        lazy: safeLazy(() => import("./pages/CaseStudies").then((m) => ({ Component: m.CaseStudies }))),
       },
       {
         path: "case-studies/:slug",
-        lazy: () => import("./pages/CaseStudyPost").then((m) => ({ Component: m.CaseStudyPost })),
+        lazy: safeLazy(() => import("./pages/CaseStudyPost").then((m) => ({ Component: m.CaseStudyPost }))),
       },
       {
         path: "career",
-        lazy: () => import("./pages/Career").then((m) => ({ Component: m.Career })),
+        lazy: safeLazy(() => import("./pages/Career").then((m) => ({ Component: m.Career }))),
       },
       {
         path: "contact",
-        lazy: () => import("./pages/ContactUs").then((m) => ({ Component: m.ContactUs })),
+        lazy: safeLazy(() => import("./pages/ContactUs").then((m) => ({ Component: m.ContactUs }))),
       },
       {
         path: "terms",
-        lazy: () => import("./pages/TermsAndConditions").then((m) => ({ Component: m.TermsAndConditions })),
+        lazy: safeLazy(() => import("./pages/TermsAndConditions").then((m) => ({ Component: m.TermsAndConditions }))),
       },
       {
         path: "*",
-        lazy: () => import("./pages/NotFound").then((m) => ({ Component: m.NotFound })),
+        lazy: safeLazy(() => import("./pages/NotFound").then((m) => ({ Component: m.NotFound }))),
       },
     ],
   },
 ]);
+
+

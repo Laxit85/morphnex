@@ -96,9 +96,9 @@ export function Home() {
                 </Link>
                 <div className="flex items-center space-x-4 text-[10px] font-bold uppercase tracking-[0.2em] text-[#A0A0A0] w-full sm:w-auto px-4 mt-4 sm:mt-0">
                   <div className="flex -space-x-2">
-                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)] transition-transform duration-300 hover:scale-110 hover:z-10" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client avatar 1" width={32} height={32} loading="eager" />
-                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)] transition-transform duration-300 hover:scale-110 hover:z-10" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client avatar 2" width={32} height={32} loading="eager" />
-                    <img className="inline-block h-8 w-8 rounded-none border border-[rgba(255,255,255,0.08)] transition-transform duration-300 hover:scale-110 hover:z-10" src="https://randomuser.me/api/portraits/men/46.jpg" alt="Client avatar 3" width={32} height={32} loading="eager" />
+                    <div className="w-8 h-8 rounded-full border border-[rgba(255,255,255,0.2)] bg-[#1A1A1A] flex items-center justify-center text-[10px] text-[#C9A96E] font-bold">M1</div>
+                    <div className="w-8 h-8 rounded-full border border-[rgba(255,255,255,0.2)] bg-[#262626] flex items-center justify-center text-[10px] text-[#FFFFFF] font-bold">M2</div>
+                    <div className="w-8 h-8 rounded-full border border-[rgba(255,255,255,0.2)] bg-[#C9A96E] flex items-center justify-center text-[10px] text-[#0F0F0F] font-bold">M3</div>
                   </div>
                   <span className="transition-colors duration-300 hover:text-[#FFFFFF]">Trusted by innovative brands</span>
                 </div>
@@ -112,7 +112,7 @@ export function Home() {
                   <div className="relative h-48 rounded-lg overflow-hidden group bg-[#0F0F0F] p-1.5">
                     <div className="relative w-full h-full rounded-md overflow-hidden">
                       <ImageWithFallback
-                        src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=1080&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=540&q=70&fm=webp"
                         alt="AI & ML"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         width={540}
@@ -140,12 +140,12 @@ export function Home() {
                   <div className="relative h-48 rounded-lg overflow-hidden group bg-[#0F0F0F] p-1.5">
                     <div className="relative w-full h-full rounded-md overflow-hidden">
                       <ImageWithFallback
-                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=540&q=70&fm=webp"
                         alt="Web Development"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         width={540}
                         height={192}
-                        loading="eager"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                       <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">

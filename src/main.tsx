@@ -1,5 +1,6 @@
 
-  import { createRoot } from "react-dom/client";
+// Morphnex App Entry Point - Verified base path and clean build config
+import { createRoot } from "react-dom/client";
   import '@fontsource/inter';
   import App from "./app/App.tsx";
   import "./styles/index.css";

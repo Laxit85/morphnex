@@ -18,5 +18,4 @@
 /contact /contact/ 301
 /terms /terms/ 301
 
-/assets/* /assets/* 404!
 /* /index.html 200

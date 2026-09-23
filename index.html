@@ -68,24 +68,29 @@
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/images/logo.jpeg" />
 
-    <!-- Global Dynamic Import Recovery -->
+    <!-- Global Chunk & Asset Recovery Handler -->
     <script>
-      window.addEventListener('vite:preloadError', function(event) {
-        event.preventDefault();
-        var reloaded = sessionStorage.getItem('morphnex_chunk_reload');
+      function triggerReloadOnce() {
+        var reloaded = sessionStorage.getItem('morphnex_asset_reload');
         if (!reloaded) {
-          sessionStorage.setItem('morphnex_chunk_reload', 'true');
+          sessionStorage.setItem('morphnex_asset_reload', 'true');
           window.location.reload(true);
         }
+      }
+      window.addEventListener('vite:preloadError', function(event) {
+        event.preventDefault();
+        triggerReloadOnce();
       });
       window.addEventListener('error', function(event) {
-        if (event.message && (event.message.indexOf('Failed to fetch dynamically imported module') !== -1 || event.message.indexOf('Importing a module script failed') !== -1)) {
-          event.preventDefault();
-          var reloaded = sessionStorage.getItem('morphnex_chunk_reload');
-          if (!reloaded) {
-            sessionStorage.setItem('morphnex_chunk_reload', 'true');
-            window.location.reload(true);
-          }
+        var target = event.target;
+        var isAssetError = target && (target.tagName === 'SCRIPT' || target.tagName === 'LINK');
+        var isImportError = event.message && (
+          event.message.indexOf('Failed to fetch dynamically imported module') !== -1 ||
+          event.message.indexOf('Importing a module script failed') !== -1 ||
+          event.message.indexOf('Failed to load resource') !== -1
+        );
+        if (isAssetError || isImportError) {
+          triggerReloadOnce();
         }
       }, true);
     </script>

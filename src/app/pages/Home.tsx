@@ -159,14 +159,21 @@ export function Home() {
       <section className="bg-[rgba(255,255,255,0.02)] backdrop-blur-sm py-12 border-y border-[rgba(255,255,255,0.08)] relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-[#A0A0A0] font-bold mb-8 text-[10px] tracking-[0.2em] uppercase">
-            Powering Next-Gen Companies
+            Trusted Partners & Collaborators
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-35 hover:opacity-60 transition-opacity duration-500">
-            <span className="text-lg md:text-xl font-extrabold tracking-[0.35em] text-[#FFFFFF] uppercase font-mono">KRONOS</span>
-            <span className="text-lg md:text-xl font-black tracking-[0.25em] text-[#C9A96E] uppercase">NEXUS</span>
-            <span className="text-lg md:text-xl font-light tracking-[0.45em] text-[#FFFFFF] uppercase">APEX</span>
-            <span className="text-lg md:text-xl font-extrabold tracking-[0.1em] text-[#FFFFFF] uppercase italic font-serif">VERTICES</span>
-            <span className="text-lg md:text-xl font-black tracking-[0.2em] text-[#C9A96E] uppercase">SYNAPSE</span>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-70 hover:opacity-100 transition-opacity duration-500">
+            <div className="flex items-center space-x-3">
+              <span className="text-[#C9A96E] font-mono text-sm">/01</span>
+              <span className="text-lg md:text-xl font-black tracking-[0.25em] text-[#FFFFFF] uppercase font-mono">SAHYOG TIME BANK</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-[#C9A96E] font-mono text-sm">/02</span>
+              <span className="text-lg md:text-xl font-bold tracking-[0.2em] text-[#C9A96E] uppercase">HIMANSHU <span className="text-[10px] tracking-widest text-[#A0A0A0] font-normal block sm:inline sm:ml-1">(VIDEO EDITOR)</span></span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-[#C9A96E] font-mono text-sm">/03</span>
+              <span className="text-lg md:text-xl font-light tracking-[0.25em] text-[#FFFFFF] uppercase">SACHIN <span className="text-[10px] tracking-widest text-[#A0A0A0] font-normal block sm:inline sm:ml-1">(GRAPHIC DESIGNER)</span></span>
+            </div>
           </div>
         </div> 
       </section>
@@ -407,20 +414,32 @@ export function Home() {
                 {
                   quote: "Their team rebuilt our core infrastructure with a level of polish and performance we didn't think was possible. Engagement has skyrocketed.",
                   author: 'Rohit Jangid',
-                  role: 'CEO, NexusTech',
-                  image: '/images/rohit.webp',
-                },
-                {
-                  quote: "Working with them felt like an extension of our own team. Seamless communication and an incredibly beautiful, functional end product.",
-                  author: 'Sanjay Bhati',
-                  role: 'Founder, CloudSync',
-                  image: '/images/sanjay.webp',
+                  role: '',
+                  initials: 'RJ',
                 },
                 {
                   quote: "The UI/UX overhaul not only looks Apple-tier premium, but conversion rates have increased by 40% in just two months.",
-                  author: 'Yashraj Singh',
-                  role: 'Head of Product',
-                  image: '/images/yashraj.webp',
+                  author: 'Yashraj Jodha',
+                  role: '',
+                  initials: 'YJ',
+                },
+                {
+                  quote: "Morphnex transformed our time-banking platform with an incredibly smooth digital experience. Their engineering precision, performance focus, and reliability have made a huge impact on our organization.",
+                  author: 'Sahyog Time Bank',
+                  role: 'Organization',
+                  initials: 'STB',
+                },
+                {
+                  quote: "Working with the Morphnex team on high-impact media and digital workflows has been amazing. Their speed, eye for quality, and seamless communication make collaboration effortless.",
+                  author: 'Himanshu',
+                  role: 'Video Editor',
+                  initials: 'H',
+                },
+                {
+                  quote: "Morphnex translates graphic designs into pixel-perfect web UI with precision. Their attention to subtle visual details and smooth animations brings design visions to life.",
+                  author: 'Sachin',
+                  role: 'Graphic Designer',
+                  initials: 'S',
                 },
               ]).map((testimonial, index) => (
                 <div
@@ -429,24 +448,21 @@ export function Home() {
                 >
                   <svg className="w-8 h-8 text-[#C9A96E]/40 mb-8 transition-colors duration-300 group-hover:text-[#C9A96E]" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
                   <p className="text-[#A0A0A0] font-medium text-lg leading-relaxed mb-10 flex-grow">
-                    {testimonial.quote}
+                    "{testimonial.quote}"
                   </p>
-                  <div className="flex items-center space-x-5 mt-auto">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="w-14 h-14 rounded-none object-cover border border-[#C9A96E]"
-                      width={56}
-                      height={56}
-                      loading="lazy"
-                    />
+                  <div className="flex items-center space-x-4 mt-auto border-t border-[rgba(255,255,255,0.06)] pt-6">
+                    <div className="w-12 h-12 shrink-0 bg-[rgba(201,169,110,0.1)] border border-[#C9A96E]/40 flex items-center justify-center text-[#C9A96E] font-bold text-sm tracking-wider uppercase font-mono">
+                      {testimonial.initials}
+                    </div>
                     <div>
                       <p className="font-bold text-[#FFFFFF] tracking-widest uppercase text-sm">
                         {testimonial.author}
                       </p>
-                      <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#C9A96E] mt-1">
-                        {testimonial.role}
-                      </p>
+                      {testimonial.role && (
+                        <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#C9A96E] mt-1">
+                          {testimonial.role}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
